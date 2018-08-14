@@ -1,0 +1,140 @@
+<!--
+/*
+ * 
+ * WordPres版微信小程序
+ * Original author: jianbo
+ * Secondary development：叶赫先生 www.yeehee.cn
+ * 技术支持微信号：ryan_yuu
+ * 开源协议：MIT
+ * Copyright (c) 2017 https://www.yeehee.cn All rights reserved.
+ *
+ */-->
+
+<import src="../../templates/common-list.wxml" />
+<import src="../../templates/copyright.wxml" />
+
+<form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+        <view class="search-pancel">
+          <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit"></input>
+            <button class="search-button" form-type="submit" size="mini" plain="true">
+              <icon type="search" color="#959595" size="12" />
+            </button>
+        </view>
+</form>
+
+<!-- 首页幻灯片 -->
+<view class="index-header" style="display:{{displaySwiper}}">
+    <swiper class="index-swiper" indicator-dots="true" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)">
+        <block wx:key="id" wx:for="{{postsShowSwiperList}}">
+            <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="border-radius:4px;">
+                <!--默认调取文章内容的第一张图片 -->
+                <!--
+                <image mode="aspectFill" src="{{item.content_first_image}}" style="width:100%;" />
+                -->
+                <!-- 这里调取文章特色图像 -->
+                <image mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:100%;" />
+                <view class="swiper-mask"></view>
+                <view class="swiper-desc">
+                    <text>{{item.post_title}}</text>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<view class="showerror" style="display:{{showerror}}">
+    <image src="../../images/cry80.png" style="height:100rpx;width:100rpx"></image>
+    <view class="errortext">
+        暂时无法访问网络,下拉重试...
+    </view>
+</view>
+
+<view style="display:{{showallDisplay}}">
+
+    <!-- 首页搜索框 -->
+    <!--
+      <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+        <view class="search-pancel">
+          <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit"></input>
+            <button class="search-button" form-type="submit" size="mini" plain="true">
+              <icon type="search" color="#959595" size="12" />
+            </button>
+        </view>
+    </form>
+    -->
+
+    <view style="display:{{floatDisplay}}">
+        <!-- 图标导航 -->
+        <view class="top-Nav">
+
+            <!-- 绑定同一公众号关联的其他小程序 start
+            * app-id： 为需要跳转的目标小程序appid；
+            * path: 为需要跳转的目标小程序的打开路径，默认为首页；
+            -->
+            <!--<view class="top-item">
+                <navigator 
+                target="miniProgram" 
+                open-type="navigate" 
+                app-id="wx4f706964b979122a" 
+                path="pages/topics/topics?group_id=145511852142" 
+                extra-data="" 
+                hover-class="none" 
+                version="release">
+                    <view>
+                      <image src="../../images/xingqiu.svg"></image>
+                    </view>
+                    <view>
+                      <text>星球</text>
+                    </view>
+                </navigator>
+            </view>-->
+            <!-- 绑定同一公众号关联的其他小程序 end -->
+
+            <block wx:for="{{topNav}}" wx:key="id">
+                <view class="top-item" 
+                catchtap="onNavRedirect" 
+                id="{{item.id}}" 
+                data-redicttype="{{item.redirecttype}}" 
+                data-url="{{item.url}}" 
+                data-appid="{{item.appid}}" 
+                data-extraData="{{item.extraData}}">
+                    <view>
+                      <image src="{{item.image}}"></image>
+                    </view>
+                    <view>
+                      <text>{{item.name}}</text>
+                    </view>
+                </view>
+            </block>
+            <view class="top-item" style='width:10%; position: relative; float:left; text-align:center'>
+                    <view>
+                        <image src="../../images/kefu.svg"></image>
+                    </view>
+                    <view>
+                        <text>咨询</text>
+                    </view>
+                    <button class="share-button" open-type="contact">
+                    </button>
+            </view>
+        </view>
+        <!-- 图标导航 end -->
+    </view>
+
+    <view class="container">
+     <!-- 加载图文列表 -->
+        <view class="index-container">
+            <template is="tempCommonList" data="{{postsList}}" />
+
+            <view class="loadingmore" style="display:{{floatDisplay}}">
+            <!-- 
+                <view hidden="{{isLastPage}}">
+                    <button class="more-button" formType="submit" size="mini" bindtap="loadMore">加载更多...</button>
+                </view>-->
+                <view class="no-more" hidden="{{!isLastPage}}">- 无更多文章 -</view>
+            </view>
+            <view class="copyright" style="display:{{floatDisplay}}">
+                <template is="tempCopyright" />
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,38 @@
+<!--
+/*
+ * 
+ * WordPres版微信小程序
+ * Original author: jianbo
+ * Secondary development：叶赫先生 www.yeehee.cn
+ * 技术支持微信号：ryan_yuu
+ * 开源协议：MIT
+ * Copyright (c) 2017 https://www.yeehee.cn All rights reserved.
+ *
+ */-->
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../templates/header.wxml" />
+<import src="../../templates/copyright.wxml" />
+<import src="../../templates/login-popup.wxml" />
+
+<view class="container" style="display:{{display}}">
+    <template is="tempHeader" />
+
+    <view class="wrapper">
+        <view class="excerpt">
+            <!--  <rich-text nodes="{{pageData.content.rendered}}"></rich-text> -->
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+        </view>
+ <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+     
+       <view style='text-align:center'>
+            <button class="gotowebpage-button" formType="submit" size="mini" bindtap="gotowebpage">打开官网</button>
+            <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
+        </view>
+    </view>
+   
+      <view class="copyright">
+        <template is="tempCopyright" />
+    </view>
+
+</view>
