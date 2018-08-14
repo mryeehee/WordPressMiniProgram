@@ -1,12 +1,28 @@
-# WordPress版微信小程序
+# WordPress版微信小程序 2.0 重构版（作者：叶赫先生 Wechat ID: ryan_yuu）
+
+
+# 重构功能清单：
+
+1.重构首页内容列表的显示方式，分为：右图模式、大图模式、双图模式；
+
+2.调整首页轮播图大小以及显示样式；
+
+3.重构文章详情页页头部分，增加了thumhub_img图片，并优化了标题部分的显示样式；
+
+4.重构专题页的列表显示排序样式，采用大图模式，并修复了缩略图的裁剪方式；
+
+5.重头了readlog页面的list显示方式，去除正序列表，改成有序列表；
+
+6.个人版本无法使用赞赏功能，所以去除了pay文件夹；
+
 
 # 功能清单：
 
-1.缩略图的方式显示文章列表（首页，分类文章），包括显示文章分类和发布时间，加载分页。
+1.缩略图的方式显示文章列表，包括显示文章分类和发布时间，加载分页。
 
 2.在首页用轮播方式显示置顶文章。
 
-3.显示文章分类（专题），包括显示分类的封面图片。
+3.显示文章分类（专题），包括显示分类的封面图片（新版本更新：专题列表重新优化显示方式）。
 
 4.显示文章内容页，包括文章站内链接跳转，站外链接复制到剪切板，显示猜你喜欢的相关文章。
 
@@ -38,20 +54,9 @@
 
 18.文章海报（分享微信朋友圈的卡片）。
 
-# 开源地址
+# 原作者开源地址
 
 https://github.com/iamxjb/winxin-app-watch-life.net
-
-如果因为某些原因github无法访问，可以选择以下镜像地址：
-
-1.https://git.oschina.net/iamxjb/winxin-app-watch-life.net
-
-2.https://code.aliyun.com/iamxjb/winxin-app-watch-life.net
-
-3.https://coding.net/u/xjb/p/winxin-app-watch-life.net
-
-4.https://gitlab.com/xiajianbo/winxin-app-watch-life.net
-
 
 
 # 技术支持网站：https://www.yeehee.cn
@@ -59,11 +64,11 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 
 # 小程序配套wordpress插件：
 
-本小程序完整使用需要配合我编写的wordpress插件wp-rest-api-for-app，才能完整使用，插件下载地址： https://github.com/iamxjb/wp-rest-api-for-app
+本小程序完整使用需要配合原作者（imxjb）编写的wordpress插件wp-rest-api-for-app，才能完整使用，插件下载地址： https://github.com/iamxjb/wp-rest-api-for-app
 
 # 小程序配套赞赏（微信支付）功能服务端程序：
 
-本小程序赞赏功能需要配合我编写微信支付服务端php程序，才能使用，程序下载地址： https://github.com/iamxjb/weixin-app-wxpay
+本小程序赞赏功能需要配合原作者（imxjb）编写微信支付服务端php程序，才能使用，程序下载地址： https://github.com/iamxjb/weixin-app-wxpay
 
 # 开源协议：MIT
 
