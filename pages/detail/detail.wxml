@@ -22,7 +22,6 @@
 </view>
 
 <!-- 标题浮动层 -->
-
 <view class="fd">
     <view class="entry-title">
         {{detail.title.rendered}}
@@ -50,40 +49,10 @@
 <view class="container" style='padding: 0 28rpx'>
     <view class="container" style='padding:0;'>     
         <view class="content-article-detail" style="display:{{display}}">
-            <!--<view class="entry-title">
-                {{detail.title.rendered}}
-            </view>
-            <view class="entry-date">             
-                <block wx:if="{{detail.category_name !=null}}">
-                    <text class="entry-icon-text">{{detail.category_name}}</text>
-                </block>
-
-                <image src="../../images/calendar.png" style="height:22rpx;width:22rpx;"></image>
-                <text class="entry-date-text">{{detailDate}}</text>
-
-                <image src="../../images/pageviews.png" style="height:22rpx;width:22rpx;margin-left: 20rpx;"></image>
-                <text class="entry-icon-text">{{detail.pageviews}}</text>
-
-                <image src="../../images/comments.png" style="height:22rpx;width:22rpx;margin-left: 20rpx;"></image>
-                <text class="entry-icon-text">{{total_comments}}</text>
-                        
-                <image src="../../images/home-like.png" style="height:22rpx;width:22rpx;margin-left: 20rpx;"></image>
-                <text class="entry-icon-text">{{likeCount}}</text>
-            </view>-->
             <view class="entry-summary">
                 <template is="wxParse" data="{{wxParseData:article.nodes}}" />
             </view>
         </view>
-        <!--  上一篇，下一篇  -->
-        <!--
-        <view wx:if="{{display}}" class="pagination">
-            <view wx:if="{{detail.previous_post_id}}" class="nav-previous">
-                <navigator url="../detail/detail?id={{detail.previous_post_id}}" open-type="redirect" hover-class="relatedNavigator">←{{detail.previous_post_title}}</navigator>
-            </view>
-            <view wx:if="{{detail.next_post_id}}" class="nav-next">
-                <navigator url="../detail/detail?id={{detail.next_post_id}}" open-type="redirect" hover-class="relatedNavigator">{{detail.next_post_title}}→</navigator>
-            </view>
-        </view> -->
 
         <view class="relatedPost" style="display:{{display}}">
             <view class="relatedTitle">
@@ -104,16 +73,6 @@
                 点赞支持 (点击❤支持一下)
             </view>
             <view class="entry-gap-zan"></view>
-
-            <!--
-            <view class="likeTitle">
-                <text>{{likeCount}}人已赞</text>
-            </view>
-
-            <view class="likeTitle-img">
-                <image src="../../images/like-on.png" class="img-like" id="liketop" catchtap="clickLike"></image>
-            </view>
-            -->
 
             <view class="likeText">
                 <image src="../../images/{{likeImag}}" catchtap="clickLike" id="likebottom" class="img-menu" style='width:60rpx;height:60rpx; margin-right:20rpx;'></image>
@@ -220,7 +179,7 @@
                             <view class="menu-box {{isShow ? 'emoji-move-in' : 'emoji-move-out'}} {{isLoad ? 'no-emoji-move' : ''}}">
                                 <view class="iconList">
                                     <view class="iconLine">
-                                        <view style="width:33.33%; position: relative; float:left; text-align:center">
+                                        <view style="width:25%; position: relative; float:left; text-align:center">
 
                                             <view>
                                                 <image src="../../images/forwarding.png" class="img-menu"></image>
@@ -231,16 +190,16 @@
                                             <button class="share-button share-button touch-active" open-type="share">
                                             </button>
                                         </view>
-                                        <!--<view style="width:20%; float:left; text-align:center">
+                                        <view style="width:25%; float:left; text-align:center">
                                             <view>
                                                 <image src="../../images/poster.png" catchtap="downimageTolocal" class="img-menu"></image>
                                             </view>
                                             <view>
                                                 <text>海报</text>
                                             </view>
-                                        </view>-->
+                                        </view>
 
-                                        <view style="width:33.33%; float:left; text-align:center">
+                                        <view style="width:25%; float:left; text-align:center">
                                             <view>
                                                 <image src="../../images/{{likeImag}}" catchtap="clickLike" id="likebottom" class="img-menu"></image>
                                             </view>
@@ -249,7 +208,7 @@
                                             </view>
                                         </view>
 
-                                        <view style="width:33.33%; float:left; text-align:center">
+                                        <view style="width:25%; float:left; text-align:center">
                                             <view>
                                                 <image src="../../images/copy.png" class="img-menu" catchtap="gotowebpage"></image>
                                             </view>
