@@ -18,7 +18,6 @@
         "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTitleText": "叶赫先生",
         "navigationBarTextStyle": "black",
-        "navigationStyle": "default"
     },
     "tabBar": {
         "color": "#9BABBA",
