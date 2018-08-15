@@ -1,5 +1,6 @@
 # WordPress版微信小程序 2.0 重构版
-# 作者：叶赫先生 Wechat ID: ryan_yuu
+
+作者：叶赫先生 Wechat ID: ryan_yuu
 
 
 # 重构功能清单：
