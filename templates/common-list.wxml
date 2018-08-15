@@ -131,9 +131,6 @@
               <block wx:if="{{item.category_name !=null}}">
                       <text>{{item.category_name}}</text>
               </block>
-
-              <!--image src="../../images/calendar.png"></image>
-              <text>{{item.date}}</text-->
               
               <image src="../../images/pageviews.png"></image>
               <text class="">{{item.pageviews}}</text>
