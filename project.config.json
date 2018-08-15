@@ -41,7 +41,7 @@
 				{
 					"name": "test",
 					"pathName": "COMPONENT/music",
-					"query": "a=哈哈",
+					"query": "a=",
 					"scene": 1044,
 					"shareInfo": {},
 					"referrerInfo": {}
