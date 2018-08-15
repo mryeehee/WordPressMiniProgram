@@ -12,6 +12,7 @@
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
 // Regular Expressions for parsing tags and attributes
+
 var startTag = /^<([-A-Za-z0-9_]+)((?:\s+[a-zA-Z_:][-a-zA-Z0-9_:.]*(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/,
 	endTag = /^<\/([-A-Za-z0-9_]+)[^>]*>/,
 	attr = /([a-zA-Z_:][-a-zA-Z0-9_:.]*)(?:\s*=\s*(?:(?:"((?:\\.|[^"])*)")|(?:'((?:\\.|[^'])*)')|([^>\s]+)))?/g;
