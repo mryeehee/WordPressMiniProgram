@@ -120,9 +120,9 @@ margin-bottom:5px;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-transform: uppercase;
-  font-size: 30rpx;
+  font-size: 34rpx;
   line-height: 1.4;
-  font-weight: 700;
+  font-weight: 400;
   color: #585858;
   padding-right: 8rpx;
 }

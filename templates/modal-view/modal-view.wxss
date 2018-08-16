@@ -25,6 +25,9 @@
   background: #f9f9f9;
   margin: -180rpx 65rpx;
   border-radius: 20rpx;
+  /* background-image: url(https://www.yeehee.cn/wp-content/uploads/2018/08/2018081217394674.jpg);
+  background-size: cover;
+  background-position: center center; */
 }
 .modal-title {
   padding-top: 50rpx;
