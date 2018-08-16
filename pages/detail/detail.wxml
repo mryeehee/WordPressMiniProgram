@@ -54,7 +54,7 @@
             </view>
         </view>
 
-        <view class="relatedPost" style="display:{{display}}">
+        <!--<view class="relatedPost" style="display:{{display}}">
             <view class="relatedTitle">
                 相关文章
             </view>
@@ -66,7 +66,7 @@
 
                 </block>
             </view>
-        </view>
+        </view>-->
 
         <view class="likePost" style="display:{{displayLike}}">
             <view class="relatedTitle">
