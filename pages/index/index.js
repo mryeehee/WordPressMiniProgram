@@ -69,7 +69,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '“' + config.getWebsiteName+'”www.yeehee.cn',
+      title: '' + config.getWebsiteName +' - 专注于自媒体小程序开发与定制',
       path: 'pages/index/index',
       success: function (res) {
         // 转发成功

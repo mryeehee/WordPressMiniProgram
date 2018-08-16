@@ -83,6 +83,7 @@
   font-size: 30rpx;
   line-height: 50rpx;
   color:#636363;
+  letter-spacing: 0.5rpx;
 }
 
 .entry-summary image {
@@ -376,6 +377,22 @@
   margin-bottom: 30rpx;
 }
 
+.likePost .likebtt {
+  width:auto;
+  min-width:200rpx;
+  height:60rpx;
+  line-height:56rpx;
+  border-radius:50rpx;
+  border:1px solid #2f89fc;
+  text-align:center;
+  margin:0 35% 40rpx;
+}
+
+.likePost .likebtt text {
+  font-size:26rpx;
+  color:#2f89fc;
+}
+
 .likeTitle {
   text-align: left;
   font-weight: normal;
@@ -400,7 +417,7 @@
 }
 
 .likeText {
-  text-align: left;
+  text-align: center;
   font-weight: normal;
   font-size: 26rpx;
   line-height: 30rpx;
