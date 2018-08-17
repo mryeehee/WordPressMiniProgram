@@ -83,7 +83,7 @@
 }
 
 .common-list .list-item.has-img.w-100 {
-  height:250px;
+  height:auto;
 }
 .common-list .list-item.has-img image.cover {
   position: absolute;
