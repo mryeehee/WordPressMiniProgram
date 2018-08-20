@@ -14,15 +14,15 @@
 
 .fd {
   position: relative;
-  padding:40rpx 24rpx;
+  padding:24rpx;
   background-color:#ffffff;
-  box-shadow:2rpx 4rpx 40rpx #c2c2c2;
+  /*box-shadow:2rpx 4rpx 40rpx #c2c2c2;*/
   z-index:999;
-  margin-top:-60rpx;
-  margin-bottom:24rpx;
+  margin-top:-30rpx;
+  /*margin-bottom:24rpx;
   margin-left:24rpx;
-  margin-right:24rpx;
-  border-radius: 12rpx;
+  margin-right:24rpx;*/
+  border-radius: 30rpx 30rpx 0 0;
 }
 
 .thum-mask {

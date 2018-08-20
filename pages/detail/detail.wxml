@@ -18,12 +18,12 @@
 
 
 <view class="thum-mask">
-    <image src="{{detail.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100 img-mask"></image>
+    <image src="{{detail.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100 img-mask" style='position:fixed;z-index:-99;'></image>
 </view>
 
 <!-- 标题浮动层 -->
 <view class="fd">
-    <view class="entry-title">
+    <view class="entry-title" style='padding:8rpx 8rpx 0;'>
         {{detail.title.rendered}}
     </view>
     <view class="entry-date" style='margin-bottom:10rpx;'>             
@@ -54,19 +54,18 @@
             </view>
         </view>
 
-        <!--<view class="relatedPost" style="display:{{display}}">
+        <view class="relatedPost" style="display:{{display}}">
             <view class="relatedTitle">
                 相关文章
             </view>
             <view class="entry-gap-like"></view>
             <view class="relatedText">
                 <block wx:key="id" wx:for="{{postList}}">
-                    <image src="../../images/circle-empty.png" style='width:16rpx;height:16rpx;margin:0 14rpx 1rpx 0;'></image>
-                    <navigator url="../detail/detail?id={{item.id}}" open-type="redirect" hover-class="relatedNavigator">{{item.title.rendered}}</navigator>
+                    <navigator url="../detail/detail?id={{item.id}}" open-type="redirect" hover-class="relatedNavigator"><image src="../../images/circle-empty.png" style='width:16rpx;height:16rpx;margin:0 14rpx 1rpx 0;'></image>{{item.title.rendered}}的顺序等等等</navigator>
 
                 </block>
             </view>
-        </view>-->
+        </view>
 
         <view class="likePost" style="display:{{displayLike}}">
             <view catchtap="clickLike" id="likebottom" class="likebtt">
