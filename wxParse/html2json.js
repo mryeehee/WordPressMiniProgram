@@ -18,6 +18,8 @@ var __emojisBaseSrc = '';
 var __emojis = {};
 var wxDiscode = require('./wxDiscode.js');
 var HTMLParser = require('./htmlparser.js');
+var highlight = require('./highlight.js');
+
 
 // Empty Elements - HTML 5
 var empty = makeMap("area,base,basefont,br,col,frame,hr,img,input,link,meta,param,embed,command,keygen,source,track,wbr");
@@ -55,12 +57,14 @@ function removeDOCTYPE(html) {
 }
 
 function trimHtml(html) {
-  return html
-        .replace(/\n+/g, '')
-        .replace(/<!--.*?-->/ig, '')
-        .replace(/\/\*.*?\*\//ig, '')
-        .replace(/[ ]+</ig, '<')
+   return html
+    //.replace(/\n+/g, '')
+    .replace(/<!--.*?-->/ig, '')
+    // 替换掉 /* */
+    //.replace(/\/\*.*?\*\//ig, '')
+    .replace(/[ ]+</ig, '<')
 }
+
 
 
 function html2json(html, bindName) {
@@ -68,6 +72,8 @@ function html2json(html, bindName) {
     html = removeDOCTYPE(html);
     html = trimHtml(html);
     html = wxDiscode.strDiscode(html);
+    html = highlight.highlight(html);
+
     //生成node节点
     var bufArray = [];
     var results = {
@@ -257,6 +263,11 @@ function html2json(html, bindName) {
 function transEmojiStr(str){
   // var eReg = new RegExp("["+__reg+' '+"]");
 //   str = str.replace(/\[([^\[\]]+)\]/g,':$1:')
+
+    //修复 < > 的显示问题
+    str = str.replace(/&lt;/g, '<');
+    str = str.replace(/&gt;/g, '>');
+    str = str.replace(/&amp;/g, '&');
   
   var emojiObjs = [];
   //如果正则表达式为空

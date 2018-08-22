@@ -109,8 +109,8 @@ function strcharacterDiscode(str){
     // str = str.replace(/&lt;/g, '‹');
     // str = str.replace(/&gt;/g, '›');
 
-    str = str.replace(/&lt;/g, '<');
-    str = str.replace(/&gt;/g, '>');
+    //str = str.replace(/&lt;/g, '<');
+    //str = str.replace(/&gt;/g, '>');
     str = str.replace(/&#8226;/g, '•');
     str = str.replace(/&/g, '&');
     str = str.replace(/&#8221;/g, '"');
@@ -122,9 +122,6 @@ function strcharacterDiscode(str){
     str = str.replace(/&#038;/g, '&');
     str = str.replace(/&#8211;/g, '-');
     str = str.replace(/&#8212;/g, '--');
-   
-
-
     return str;
 }
 
@@ -184,15 +181,24 @@ function strOtherDiscode(str){
 
     str = str.replace(/&diams;/g, '♦');
     str = str.replace(/&#39;/g, '\'');
+
+    
     return str;
 }
 
-function strMoreDiscode(str){
-    str = str.replace(/\r\n/g,"");  
-    str = str.replace(/\n/g,"");
+//function strMoreDiscode(str){
+    //str = str.replace(/\r\n/g,"");  
+   // str = str.replace(/\n/g,"");
 
     //str = str.replace(/code/g,"wxxxcode-style");
-    return str;
+   // return str;
+//}
+
+function strMoreDiscode(str) {
+  //str = str.replace(/\r\n/g,"");  
+  str = str.replace(/([^\r])\n/g, '$1');
+  //str = str.replace(/code/g,"wxxxcode-style");
+  return str;
 }
 
 function strDiscode(str){

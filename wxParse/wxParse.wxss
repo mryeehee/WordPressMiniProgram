@@ -10,6 +10,7 @@
  * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
  */
 
+
 .wxParse{
     margin: 0 5px;
     font-family: Helvetica,sans-serif;
@@ -69,7 +70,7 @@ view{
 
 .wxParse-i,.wxParse-cite,.wxParse-em,.wxParse-var,.wxParse-address{font-style:italic}
 .wxParse-pre,.wxParse-tt,.wxParse-code,.wxParse-kbd,.wxParse-samp{font-family:monospace}
-.wxParse-pre{white-space:pre}
+.wxParse-pre{white-space:pre;background:#2d2d2d;border-radius:12rpx;padding:20rpx}
 .wxParse-big{font-size:1.17em}
 .wxParse-small,.wxParse-sub,.wxParse-sup{font-size:.83em}
 .wxParse-sub{vertical-align:sub}

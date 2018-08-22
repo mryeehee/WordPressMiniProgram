@@ -15,6 +15,7 @@ var Api = require('../../utils/api.js');
 var util = require('../../utils/util.js');
 var auth = require('../../utils/auth.js');
 var WxParse = require('../../wxParse/wxParse.js');
+var prism = require('../../utils/prism.js');
 var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
 
@@ -310,7 +311,8 @@ Page({
         getPostDetailRequest
             .then(response => {
                 res = response;
-                WxParse.wxParse('article', 'html', response.data.content.rendered, self, 5);
+                //WxParse.wxParse('article', 'html', response.data.content.rendered, self, 5);
+                WxParse.wxParse('article', 'html', response.data.content.rendered.replace(/<pre[^>]*><code class=\"([^\s]*)\">/g, "<pre class=\"pure-highlightjs $1\">").replace(/<\/code><\/pre>/g, "</pre>"), self, 5);
                 if (response.data.total_comments != null && response.data.total_comments != '') {
                     self.setData({
                         commentCount: "有" + response.data.total_comments + "条评论"
