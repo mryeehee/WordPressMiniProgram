@@ -8,6 +8,11 @@
           <view class="content-title content-title-100">
             <text>{{item.title.rendered}}</text>
           </view>
+
+          <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+            <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+          </view>
+
           <view class="content-date" style='margin-right:0;'>
 
               <block wx:if="{{item.category_name !=null}}">
@@ -36,8 +41,12 @@
             <view class="content-title content-title-100" style="margin-top:180px;">
               <text>{{item.title.rendered}}</text>
             </view>
-            <view class="content-date" style='margin-right:0;'>
-              
+
+            <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+                <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+            </view>
+
+            <view class="content-date" style='margin-right:0;'>             
               <block wx:if="{{item.category_name !=null}}">
                       <text>{{item.category_name}}</text>
               </block>
@@ -70,8 +79,12 @@
           <view class="content-title content-title-100">
             <text>{{item.title.rendered}}</text>
           </view>
-          <view class="content-date" style='margin-right:0;'>
 
+          <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+              <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+          </view>
+
+          <view class="content-date" style='margin-right:0;'>
               <block wx:if="{{item.category_name !=null}}">
                       <text>{{item.category_name}}</text>
               </block>
@@ -98,8 +111,12 @@
           <view class="content-title content-title-100">
             <text>{{item.title.rendered}}</text>
           </view>
-          <view class="content-date" style='margin-right:0;'>
 
+          <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+              <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+          </view>
+
+          <view class="content-date" style='margin-right:0;'>
               <block wx:if="{{item.category_name !=null}}">
                       <text>{{item.category_name}}</text>
               </block>
@@ -126,8 +143,12 @@
             <view class="content-title content-title-100" style="margin-top:180px;">
               <text>{{item.title.rendered}}</text>
             </view>
-            <view class="content-date" style='margin-right:0;'>
-              
+
+            <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+            <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+          </view>
+
+            <view class="content-date" style='margin-right:0;'>              
               <block wx:if="{{item.category_name !=null}}">
                       <text>{{item.category_name}}</text>
               </block>
@@ -157,8 +178,8 @@
           <view class="content-title">
             <text>{{item.title.rendered}}</text>
           </view>
-          <view class="content-date">
 
+          <view class="content-date">
             <block wx:if="{{item.category_name !=null}}">
                     <text>{{item.category_name}}</text>
              </block>
