@@ -79,7 +79,7 @@ swiper .swiper-desc {
   color: #296fd0 !important;
   width: 20%;
   margin: 0 !important;
-  box-shadow: 1px 1px 6px #ecf0f0;
+  /* box-shadow: 1px 1px 6px #ecf0f0;*/
 }
 
 .search-button icon {
@@ -102,7 +102,7 @@ swiper .swiper-desc {
   height: 48rpx;
   width: 80%;
   text-align: left;
-  box-shadow: 1px 1px 6px #ecf0f0;
+  /* box-shadow: 1px 1px 6px #ecf0f0;*/
 }
 
 .share-button {
@@ -116,8 +116,9 @@ swiper .swiper-desc {
 .search-pancel {
   display: flex;
   flex-direction: row;
-  margin-top: 8px;
-  padding: 0rpx 24rpx;
+  /* margin-top: 8px; */
+  padding: 24rpx;
+  background: #2f89fc;
 }
 
 .search-pancel image {
