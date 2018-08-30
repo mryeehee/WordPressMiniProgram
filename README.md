@@ -1,9 +1,9 @@
-# WordPress版微信小程序 2.0 重构版
+### WordPress版微信小程序 2.0 重构版
 
 作者：叶赫先生 Wechat ID: ryan_yuu
 
 
-# 重构功能清单：
+### 重构功能清单：
 
 1.重构首页内容列表的显示方式，分为：右图模式、大图模式、双图模式；
 
@@ -18,7 +18,7 @@
 6.个人版本无法使用赞赏功能，所以去除了pay文件夹；
 
 
-# 功能清单：
+### 功能清单：
 
 1.缩略图的方式显示文章列表，包括显示文章分类和发布时间，加载分页。
 
@@ -56,39 +56,39 @@
 
 18.文章海报（分享微信朋友圈的卡片）。
 
-# 原作者开源地址
+### 原作者开源地址
 
 https://github.com/iamxjb/winxin-app-watch-life.net
 
 
-# 技术支持网站：https://www.yeehee.cn
+### 技术支持网站：https://www.yeehee.cn
 
 
-# 小程序配套wordpress插件：
+### 小程序配套wordpress插件：
 
 本小程序完整使用需要配合原作者（imxjb）编写的wordpress插件wp-rest-api-for-app，才能完整使用，插件下载地址： https://github.com/iamxjb/wp-rest-api-for-app
 
-# 小程序配套赞赏（微信支付）功能服务端程序：
+### 小程序配套赞赏（微信支付）功能服务端程序：
 
 本小程序赞赏功能需要配合原作者（imxjb）编写微信支付服务端php程序，才能使用，程序下载地址： https://github.com/iamxjb/weixin-app-wxpay
 
-# 开源协议：MIT
+### 开源协议：MIT
 
-# 技术支持微信：ryan_yuu
+### 技术支持微信：ryan_yuu
 
 
-# 安装使用说明文档
+### 安装使用说明文档
 
 <a href="https://www.watch-life.net/wordpress/weixin-app-install.html" target="_blank" rel="noopener">WordPress版微信小程序安装使用说明</a>
 
 
-# 讨论微信群：
+### 讨论微信群：
 
 由于微信群超过100人，无法再扫描二维码加入。如果你想加入，请先加我的微信：ryan_yuu ，我拉你入群。
 
 
 
-# 开源声明：
+### 开源声明：
 
 1、本程序html转wxml的解析采用的是https://github.com/icindy/wxParse
 
@@ -98,11 +98,11 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 在此对上述提供开源及创意表示致谢。
 
 
-# 捐赠赞赏：请微信扫描以下二维码。感谢您对我的支持，您的支持是我前进的动力
+### 捐赠赞赏：请微信扫描以下二维码。感谢您对我的支持，您的支持是我前进的动力
 
 ![weixinpay](https://www.yeehee.cn/wp-content/uploads/2018/07/2018072012153896.jpg) 
 
-# WordPress微信小程序知识星球(小密圈)
+### WordPress微信小程序知识星球(小密圈)
 
 考虑到微信群里交流过于庞杂和碎片化，无法提供更专业的技术服务和知识分享，很多好的知识不能很好沉淀和积累，无法提供更好的分享价值，同时我也有意和兴趣相投人一起，创建一个wordpress和微信小程序的知识社区。基于此，我在“知识星球”里创建了一个“Wordpress微信小程序”的圈子，欢迎有兴趣的朋友和我一起创建一个有活力、创造力、有趣、有深度的知识社群。
 
@@ -110,9 +110,9 @@ https://github.com/iamxjb/winxin-app-watch-life.net
  
 
 
-# 更新历史：
+### 更新历史：
 
-## 2018年2月15日
+#### 2018年2月15日
 
 1.增加文章海报（分享微信朋友圈的卡片）功能。
 
@@ -122,7 +122,7 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 
 4.首页导航，提供三种方式的跳转
 
-## 2017年12月15日
+#### 2017年12月15日
 
 1.增加赞赏后发送模板消息。
 
@@ -130,7 +130,7 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 
 3.调整评论和回复的显示方式及提交评论、回复发送方式。
 
-## 2017年11月1日
+#### 2017年11月1日
 
 1.调整“热点”板块为“排行”板块，显示按评论数、浏览数、点攒数、赞赏数的文章排行。
 
@@ -141,13 +141,13 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 4、在关于中显示“赞赏”或“捐赠”人的头像，并致谢。
 
 
-## 2017年9月16日
+#### 2017年9月16日
 1.增加点赞功能
 
 2.增加赞赏功能（微信支付）
 
 
-## 2017年8月17日
+#### 2017年8月17日
 1.增加站内链接。
 
 2.增加猜你喜欢功能。
@@ -156,7 +156,7 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 
 4、取消浏览记录功能。
 
-## 2017年7月29日
+#### 2017年7月29日
 
 1.完善文章的评论，按评论时间对一级评论按时间先后显示，最新发表的显示在最上面。
 
@@ -166,7 +166,7 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 
 4.文章内容页加入一直没有引入的wxParse.wxss文件（弥补愚蠢的错误）。
 
-## 2017年7月15日
+#### 2017年7月15日
 
 1.完善首页列表的缩略。调整为150*150的小图，需要配合wp-rest-api-for-app插件.
 
@@ -183,7 +183,7 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 7.为评论增加分页，提供分页刷新的功能。
 
 
-## 日期：2017年6月6日
+#### 日期：2017年6月6日
 
 内容：
 
@@ -198,7 +198,7 @@ https://github.com/iamxjb/winxin-app-watch-life.net
 5.增加小程序分享
 
 
-## 日期：2017年5月15日
+#### 日期：2017年5月15日
 
 内容：
 
