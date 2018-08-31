@@ -37,11 +37,11 @@
   flex-direction: column;
   align-items: center;
   background-color: #2f89fc;
-  height: 440rpx;
+  height: 280rpx;
   width: 100%;
-  background-image: url(https://www.yeehee.cn/wp-content/uploads/2018/08/2018081117514876.png);
+  /* background-image: url(https://www.yeehee.cn/wp-content/uploads/2018/08/2018081117514876.png);
   background-size: cover;
-  background-position: center center;
+  background-position: center center; */
   /* position: absolute;
   z-index: 2;
   top: 70rpx;
@@ -51,8 +51,9 @@
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 108rpx 0 24rpx;
+  margin: 20rpx 0 24rpx;
   border-radius: 50%;
+  border: 12rpx solid rgba(255,255,255,0.3);
 }
 
 .dec {
