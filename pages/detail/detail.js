@@ -563,14 +563,19 @@ Page({
                 setTimeout(function () {
                     //wx.hideLoading();
                     if (flag == '1') {
-                        wx.showToast({
-                            title: '评论发布成功',
-                            icon: 'success',
-                            duration: 900,
-                            success: function () {
+                      self.setData({
+                        'dialog.hidden': false,
+                        'dialog.title': '提示',
+                        'dialog.content': '评论已提交成功，请等待管理员审核。审核通过后会显示在评论列表内。'
 
-                            }
-                        })
+                      });
+                        //wx.showToast({
+                        //    title: '评论发布成功',
+                        //    icon: 'success',
+                        //    duration: 900,
+                        //    success: function () {
+                        //    }
+                        //})
                     }
                 }, 900);
             })
@@ -803,13 +808,19 @@ Page({
                         self.onReachBottom();
                         //self.fetchCommentData();
                         setTimeout(function () {                           
-                            wx.showToast({
-                                title: '评论发布成功',
-                                icon: 'success',
-                                duration: 900,
-                                success: function () {
-                                }
-                            })                            
+                          self.setData({
+                            'dialog.hidden': false,
+                            'dialog.title': '温馨提示',
+                            'dialog.content': '评论已提交成功，请等待管理员审核。文明评论，请勿灌水或者重复提交评论噢~'
+
+                          });
+                          //  wx.showToast({
+                          //      title: '评论发布成功',
+                          //      icon: 'success',
+                          //     duration: 900,
+                          //      success: function () {
+                          //      }
+                          //  })                            
                         }, 900); 
                     }).catch(response => {
                         console.log(response)
