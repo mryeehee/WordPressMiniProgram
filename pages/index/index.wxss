@@ -28,7 +28,7 @@
 swiper.index-swiper {
   position: relative;
   height: 420rpx;
-  padding: 24rpx;
+  margin: 24rpx 0;
 }
 
 swiper .swiper-mask {

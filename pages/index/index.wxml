@@ -24,19 +24,15 @@
 
 <!-- 首页幻灯片 -->
 <view class="index-header" style="display:{{displaySwiper}}">
-    <swiper class="index-swiper" indicator-dots="true" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)">
+    <swiper class="index-swiper" indicator-dots="" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)"  previous-margin="30rpx" next-margin="50rpx" circular="true">
         <block wx:key="id" wx:for="{{postsShowSwiperList}}">
-            <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="border-radius:4px;">
+            <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="">
                 <!--默认调取文章内容的第一张图片 -->
                 <!--
                 <image mode="aspectFill" src="{{item.content_first_image}}" style="width:100%;" />
                 -->
                 <!-- 这里调取文章特色图像 -->
-                <image mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:100%;" />
-                <view class="swiper-mask"></view>
-                <view class="swiper-desc">
-                    <text>{{item.post_title}}</text>
-                </view>
+                <image mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:100%;margin:0 24rpx;" />
             </swiper-item>
         </block>
     </swiper>
