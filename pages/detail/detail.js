@@ -56,7 +56,7 @@ Page({
         isShow: false,//控制menubox是否显示
         isLoad: true,//解决menubox执行一次  
         menuBackgroup: false,
-        likeImag: "like.png",
+        likeImag: "like.svg",
         likeList: [],
         likeCount: 0,
         displayLike: 'none',
@@ -159,7 +159,7 @@ Page({
                     success: function (res) {
                         wx.showToast({
                             title: '链接已复制',
-                            image: '../../images/link.png',
+                            image: '../../images/link.svg',
                             duration: 2000
                         })
                     }
@@ -218,7 +218,7 @@ Page({
 
                     }
                     self.setData({
-                        likeImag: "like-on.png"
+                        likeImag: "like-on.svg"
                     });
                 })
         }
@@ -239,7 +239,7 @@ Page({
                 .then(response => {
                     if (response.data.status == '200') {
                         self.setData({
-                            likeImag: "like-on.png"
+                            likeImag: "like-on.svg"
                         });
 
                         console.log("已赞过");
