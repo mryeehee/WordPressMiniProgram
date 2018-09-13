@@ -94,7 +94,6 @@
             <view class="entry-gap-zan"></view>-->
 
             <view class="likeText">
-                <image src="../../images/{{likeImag}}" catchtap="clickLike" id="likebottom" class="img-menu" style='width:60rpx;height:60rpx; margin-right:20rpx;'></image>
                 <block wx:key="id" wx:for="{{likeList}}">
                     <image src="{{item}}" class="gravatarLikeImg"></image>
                 </block>
@@ -123,7 +122,7 @@
                       <!-- 一级回复-->
                     <view wx:for="{{item.child}}" wx:key="itemid1" wx:for-index="idx" wx:for-item="item1">
                         <view class="replay-user" bindtap="replay" data-id="{{item1.id}}" data-name="{{item1.author_name}}" data-userid="{{item1.userid}}" data-formId="{{item1.formId}}" data-commentdate="{{item1.date}}">
-                            {{item1.author_name}} 回复{{item.author_name}}:{{item1.content}}
+                            {{item1.author_name}} 回复 {{item.author_name}}:{{item1.content}}
                         </view>
 
 

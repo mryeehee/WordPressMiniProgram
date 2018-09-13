@@ -53,7 +53,6 @@
 .content-article-detail {
   margin-top: 40rpx;
   margin-bottom: 24px;
-  padding-bottom: 48rpx;
 }
 
 .entry-title {
@@ -252,6 +251,7 @@
   display: flex !important;
   flex-direction: column;
   justify-content: center;
+  margin-left: 0;
   margin-right: 22rpx;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -300,9 +300,9 @@
   min-height: 30px;
   width: 51%;
   text-align: left;
-  border: 1px solid #2f89fc;
-  border-bottom-left-radius: 6px;
-  border-top-left-radius: 6px;
+  border-bottom: 1px solid #2f89fc;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
