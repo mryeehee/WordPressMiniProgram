@@ -24,7 +24,7 @@
 
 <!-- 首页幻灯片 -->
 <view class="index-header" style="display:{{displaySwiper}}">
-    <swiper class="index-swiper" indicator-dots="" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)"  previous-margin="30rpx" next-margin="50rpx" circular="true">
+    <swiper class="index-swiper" indicator-dots="" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)"  previous-margin="30rpx" next-margin="50rpx" circular="true" bindchange="handleChange">
         <block wx:key="id" wx:for="{{postsShowSwiperList}}">
             <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="">
                 <!--默认调取文章内容的第一张图片 -->
@@ -32,7 +32,7 @@
                 <image mode="aspectFill" src="{{item.content_first_image}}" style="width:100%;" />
                 -->
                 <!-- 这里调取文章特色图像 -->
-                <image mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:100%;margin:0 24rpx;" />
+                <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:100%;margin:0 24rpx;" />
             </swiper-item>
         </block>
     </swiper>
