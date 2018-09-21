@@ -17,6 +17,7 @@ var wxRequest = require('../../utils/wxRequest.js')
 
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
+var app = getApp();
 
 Page({
     data: {
@@ -56,6 +57,26 @@ Page({
         var self = this;
         self.fetchCommentsData();
     },
+  onShow: function (options) {
+    // 小神推获取用户信息
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting["scope.userInfo"]) {
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res;
+              wx.login({
+                success: function (res) {
+                  var jsCode = res.code;
+                  app.aldpush.pushuserinfo(userInfo, jsCode);
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+  },
     //获取文章列表数据
     fetchCommentsData: function () {
         var self = this;

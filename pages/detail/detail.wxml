@@ -45,7 +45,6 @@
     </view>
 </view>
 
-
 <view class="container" style='padding: 0 28rpx'>
     <view class="container" style='padding:0;'>     
         <view class="content-article-detail" style="display:{{display}}">

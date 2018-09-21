@@ -4,232 +4,232 @@
     <block wx:key="id" wx:for="{{postsList}}">
       <!-- 开始判断列表内容的第3列，样式重新排列 //大图模式 -->
       <view wx:if="{{index%10==2}}">
-        <view bindtap="" style="position:relative">
-          <form bindsubmit="pushFormSubmit"  report-submit='true'>
-          <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
-              <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-                <view class="content-title content-title-100">
-                  <text>{{item.title.rendered}}</text>
-                </view>
-
-                <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-                  <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
-                </view>
-
-                <view class="content-date" style='margin-right:0;'>
-
-                    <block wx:if="{{item.category_name !=null}}">
-                            <text>{{item.category_name}}</text>
-                    </block>
-
-                    <!--image src="../../images/calendar.png"></image>
-                    <text>{{item.date}}</text-->
-
-                    <image src="../../images/pageviews.png"></image>
-                    <text class="">{{item.pageviews}}</text>
-
-                    <image src="../../images/comments.png"></image>
-                    <text class="">{{item.total_comments}}</text>
-
-                    <image src="../../images/home-like.png"></image>
-                    <text class="">{{item.like_count}}</text>
-
-                </view>
-                    <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
-              </view>
-          </form>
-        </view>
-      </view>
-      <!-- 开始判断列表内容的第4列，样式重新排列 // 双图模式 -->
-      <view wx:elif="{{index%10==3}}">
-        <view bindtap="" style="position:relative">
-          <form bindsubmit="pushFormSubmit"  report-submit='true'>
-          <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
-              <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-                  <view class="content-title content-title-100" style="margin-top:180px;">
-                    <text>{{item.title.rendered}}</text>
-                  </view>
-
-                  <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-                      <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
-                  </view>
-
-                  <view class="content-date" style='margin-right:0;'>             
-                    <block wx:if="{{item.category_name !=null}}">
-                            <text>{{item.category_name}}</text>
-                    </block>
-
-                    <!--image src="../../images/calendar.png"></image>
-                    <text>{{item.date}}</text-->
-                    
-                    <image src="../../images/pageviews.png"></image>
-                    <text class="">{{item.pageviews}}</text>
-
-                    <image src="../../images/comments.png"></image>
-                    <text class="">{{item.total_comments}}</text>
-
-                    <image src="../../images/home-like.png"></image>
-                    <text class="">{{item.like_count}}</text>
-
-                  </view>
-
-                  <!-- 调取文章首图、特色图，进行重新排版 -->
-                  <view>
-                    <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100" style='width:50%;height:165px;margin-right:50%'></image>
-                    <image src="{{item.content_first_image}}" mode="aspectFill" class="cover cover-100" style='width:48%;height:165px;'></image>
-                  </view>
-
-              </view>
-          </form>
-        </view>
-      </view>
-      <!-- 开始判断列表内容的第9列，样式重新排列 // 大图模式-->
-      <view wx:elif="{{index%10==8}}">
-        <view bindtap="" style="position:relative">
-          <form bindsubmit="pushFormSubmit"  report-submit='true'>
-          <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
-              <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-                <view class="content-title content-title-100">
-                  <text>{{item.title.rendered}}</text>
-                </view>
-
-                <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-                    <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
-                </view>
-
-                <view class="content-date" style='margin-right:0;'>
-                    <block wx:if="{{item.category_name !=null}}">
-                            <text>{{item.category_name}}</text>
-                    </block>
-
-                    <!--image src="../../images/calendar.png"></image>
-                    <text>{{item.date}}</text-->
-
-                    <image src="../../images/pageviews.png"></image>
-                    <text class="">{{item.pageviews}}</text>
-
-                    <image src="../../images/comments.png"></image>
-                    <text class="">{{item.total_comments}}</text>
-
-                    <image src="../../images/home-like.png"></image>
-                    <text class="">{{item.like_count}}</text>
-
-                </view>
-                    <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
-              </view>
-          </form>
-        </view>
-      </view>
-      <!-- 开始判断列表内容的第12列，样式重新排列 // 大图模式-->
-      <view wx:elif="{{index%10==11}}">
-        <view bindtap="" style="position:relative">
-          <form bindsubmit="pushFormSubmit"  report-submit='true'>
-          <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
+        <view bindtap="tap" style="position:relative">
+          <form bindsubmit="pushFormSubmit" report-submit='true'>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";min-height:600rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
             <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
               <view class="content-title content-title-100">
                 <text>{{item.title.rendered}}</text>
               </view>
 
               <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-                  <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+                <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
               </view>
 
               <view class="content-date" style='margin-right:0;'>
-                  <block wx:if="{{item.category_name !=null}}">
-                          <text>{{item.category_name}}</text>
-                  </block>
 
-                  <!--image src="../../images/calendar.png"></image>
-                  <text>{{item.date}}</text-->
+                <block wx:if="{{item.category_name !=null}}">
+                  <text>{{item.category_name}}</text>
+                </block>
 
-                  <image src="../../images/pageviews.png"></image>
-                  <text class="">{{item.pageviews}}</text>
+                <!--image src="../../images/calendar.png"></image>
+                    <text>{{item.date}}</text-->
 
-                  <image src="../../images/comments.png"></image>
-                  <text class="">{{item.total_comments}}</text>
+                <image src="../../images/pageviews.png"></image>
+                <text class="">{{item.pageviews}}</text>
 
-                  <image src="../../images/home-like.png"></image>
-                  <text class="">{{item.like_count}}</text>
+                <image src="../../images/comments.png"></image>
+                <text class="">{{item.total_comments}}</text>
+
+                <image src="../../images/home-like.png"></image>
+                <text class="">{{item.like_count}}</text>
 
               </view>
-                  <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
+              <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
+            </view>
+          </form>
+        </view>
+      </view>
+      <!-- 开始判断列表内容的第4列，样式重新排列 // 双图模式 -->
+      <view wx:elif="{{index%10==3}}">
+        <view bindtap="tap" style="position:relative">
+          <form bindsubmit="pushFormSubmit" report-submit='true'>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+            <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+              <view class="content-title content-title-100" style="margin-top:180px;">
+                <text>{{item.title.rendered}}</text>
+              </view>
+
+              <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+                <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+              </view>
+
+              <view class="content-date" style='margin-right:0;'>
+                <block wx:if="{{item.category_name !=null}}">
+                  <text>{{item.category_name}}</text>
+                </block>
+
+                <!--image src="../../images/calendar.png"></image>
+                    <text>{{item.date}}</text-->
+
+                <image src="../../images/pageviews.png"></image>
+                <text class="">{{item.pageviews}}</text>
+
+                <image src="../../images/comments.png"></image>
+                <text class="">{{item.total_comments}}</text>
+
+                <image src="../../images/home-like.png"></image>
+                <text class="">{{item.like_count}}</text>
+
+              </view>
+
+              <!-- 调取文章首图、特色图，进行重新排版 -->
+              <view>
+                <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100" style='width:50%;height:165px;margin-right:50%'></image>
+                <image src="{{item.content_first_image}}" mode="aspectFill" class="cover cover-100" style='width:48%;height:165px;'></image>
+              </view>
+
+            </view>
+          </form>
+        </view>
+      </view>
+      <!-- 开始判断列表内容的第9列，样式重新排列 // 大图模式-->
+      <view wx:elif="{{index%10==8}}">
+        <view bindtap="tap" style="position:relative">
+          <form bindsubmit="pushFormSubmit" report-submit='true'>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+            <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+              <view class="content-title content-title-100">
+                <text>{{item.title.rendered}}</text>
+              </view>
+
+              <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+                <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+              </view>
+
+              <view class="content-date" style='margin-right:0;'>
+                <block wx:if="{{item.category_name !=null}}">
+                  <text>{{item.category_name}}</text>
+                </block>
+
+                <!--image src="../../images/calendar.png"></image>
+                    <text>{{item.date}}</text-->
+
+                <image src="../../images/pageviews.png"></image>
+                <text class="">{{item.pageviews}}</text>
+
+                <image src="../../images/comments.png"></image>
+                <text class="">{{item.total_comments}}</text>
+
+                <image src="../../images/home-like.png"></image>
+                <text class="">{{item.like_count}}</text>
+
+              </view>
+              <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
+            </view>
+          </form>
+        </view>
+      </view>
+      <!-- 开始判断列表内容的第12列，样式重新排列 // 大图模式-->
+      <view wx:elif="{{index%10==11}}">
+        <view bindtap="tap" style="position:relative">
+          <form bindsubmit="pushFormSubmit" report-submit='true'>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+            <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+              <view class="content-title content-title-100">
+                <text>{{item.title.rendered}}</text>
+              </view>
+
+              <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+                <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+              </view>
+
+              <view class="content-date" style='margin-right:0;'>
+                <block wx:if="{{item.category_name !=null}}">
+                  <text>{{item.category_name}}</text>
+                </block>
+
+                <!--image src="../../images/calendar.png"></image>
+                  <text>{{item.date}}</text-->
+
+                <image src="../../images/pageviews.png"></image>
+                <text class="">{{item.pageviews}}</text>
+
+                <image src="../../images/comments.png"></image>
+                <text class="">{{item.total_comments}}</text>
+
+                <image src="../../images/home-like.png"></image>
+                <text class="">{{item.like_count}}</text>
+
+              </view>
+              <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
             </view>
           </form>
         </view>
       </view>
       <!-- 开始判断列表内容的第17列，样式重新排列 // 双图模式 -->
       <view wx:elif="{{index%10==16}}">
-        <view bindtap="" style="position:relative">
-          <form bindsubmit="pushFormSubmit"  report-submit='true'>
-          <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
-              <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-                  <view class="content-title content-title-100" style="margin-top:180px;">
-                    <text>{{item.title.rendered}}</text>
-                  </view>
+        <view bindtap="tap" style="position:relative">
+          <form bindsubmit="pushFormSubmit" report-submit='true'>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+            <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+              <view class="content-title content-title-100" style="margin-top:180px;">
+                <text>{{item.title.rendered}}</text>
+              </view>
 
-                  <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-                  <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
-                </view>
+              <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
+                <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+              </view>
 
-                  <view class="content-date" style='margin-right:0;'>              
-                    <block wx:if="{{item.category_name !=null}}">
-                            <text>{{item.category_name}}</text>
-                    </block>
-                    
-                    <image src="../../images/pageviews.png"></image>
-                    <text class="">{{item.pageviews}}</text>
+              <view class="content-date" style='margin-right:0;'>
+                <block wx:if="{{item.category_name !=null}}">
+                  <text>{{item.category_name}}</text>
+                </block>
 
-                    <image src="../../images/comments.png"></image>
-                    <text class="">{{item.total_comments}}</text>
+                <image src="../../images/pageviews.png"></image>
+                <text class="">{{item.pageviews}}</text>
 
-                    <image src="../../images/home-like.png"></image>
-                    <text class="">{{item.like_count}}</text>
+                <image src="../../images/comments.png"></image>
+                <text class="">{{item.total_comments}}</text>
 
-                  </view>
-
-                  <!-- 调取文章首图、特色图，进行重新排版 -->
-                  <view>
-                    <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100" style='width:50%;height:165px;margin-right:50%'></image>
-                    <image src="{{item.content_first_image}}" mode="aspectFill" class="cover cover-100" style='width:48%;height:165px;'></image>
-                  </view>
+                <image src="../../images/home-like.png"></image>
+                <text class="">{{item.like_count}}</text>
 
               </view>
+
+              <!-- 调取文章首图、特色图，进行重新排版 -->
+              <view>
+                <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100" style='width:50%;height:165px;margin-right:50%'></image>
+                <image src="{{item.content_first_image}}" mode="aspectFill" class="cover cover-100" style='width:48%;height:165px;'></image>
+              </view>
+
+            </view>
           </form>
         </view>
       </view>
       <!-- 除去满足以上条件以外的列表内容，默认排列 // 右图模式 -->
       <view wx:else>
-        <view bindtap="" style="position:relative">
-          <form bindsubmit="pushFormSubmit"  report-submit='true'>
-          <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true"  formType="submit"></button>
-              <view class="list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-                <view class="content-title">
-                  <text>{{item.title.rendered}}</text>
-                </view>
-
-                <view class="content-date">
-                  <block wx:if="{{item.category_name !=null}}">
-                          <text>{{item.category_name}}</text>
-                  </block>
-
-                  <!--image src="../../images/calendar.png"></image>
-                  <text>{{item.date}}</text-->
-                  
-                  <image src="../../images/pageviews.png"></image>
-                  <text class="">{{item.pageviews}}</text>
-
-                  <image src="../../images/comments.png"></image>
-                  <text class="">{{item.total_comments}}</text>
-
-                  <image src="../../images/home-like.png"></image>
-                  <text class="">{{item.like_count}}</text>
-
-                </view>
-                <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover" style=""></image>
+        <view bindtap="tap" style="position:relative">
+          <form bindsubmit="pushFormSubmit" report-submit='true'>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+            <view class="list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+              <view class="content-title">
+                <text>{{item.title.rendered}}</text>
               </view>
+
+              <view class="content-date">
+                <block wx:if="{{item.category_name !=null}}">
+                  <text>{{item.category_name}}</text>
+                </block>
+
+                <!--image src="../../images/calendar.png"></image>
+                  <text>{{item.date}}</text-->
+
+                <image src="../../images/pageviews.png"></image>
+                <text class="">{{item.pageviews}}</text>
+
+                <image src="../../images/comments.png"></image>
+                <text class="">{{item.total_comments}}</text>
+
+                <image src="../../images/home-like.png"></image>
+                <text class="">{{item.like_count}}</text>
+
+              </view>
+              <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover" style=""></image>
+            </view>
           </form>
         </view>
       </view>
     </block>
-  </view>  
+  </view>
 </template>

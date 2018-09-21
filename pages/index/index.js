@@ -16,6 +16,7 @@ var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
+var app = getApp();
 
 
 Page({
@@ -118,7 +119,26 @@ Page({
     });
        
   },
-
+  onShow: function (options) {
+    // 小神推获取用户信息
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting["scope.userInfo"]) {
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res;
+              wx.login({
+                success: function (res) {
+                  var jsCode = res.code;
+                  app.aldpush.pushuserinfo(userInfo, jsCode);
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+  },
   /* 这里实现控制中间凸显图片的样式 */
   handleChange: function (e) {
     this.setData({
@@ -128,7 +148,24 @@ Page({
   
   onShow: function (options){
       wx.setStorageSync('openLinkCount', 0);
-
+      // 小神推获取用户信息
+      wx.getSetting({
+        success: function (res) {
+          if (res.authSetting["scope.userInfo"]) {
+            wx.getUserInfo({
+              success: function (res) {
+                var userInfo = res;
+                wx.login({
+                  success: function (res) {
+                    var jsCode = res.code;
+                    app.aldpush.pushuserinfo(userInfo, jsCode);
+                  }
+                })
+              }
+            })
+          }
+        }
+      })
   },  
   fetchTopFivePosts: function () {
     var self = this;

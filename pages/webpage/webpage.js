@@ -16,7 +16,7 @@ var auth = require('../../utils/auth.js');
 var WxParse = require('../../wxParse/wxParse.js');
 var wxApi = require('../../utils/wxApi.js');
 var wxRequest = require('../../utils/wxRequest.js');
-
+var app = getApp();
 
 Page({
 

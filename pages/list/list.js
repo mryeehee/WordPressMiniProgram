@@ -14,7 +14,7 @@ var util = require('../../utils/util.js');
 var WxParse = require('../../wxParse/wxParse.js');
 var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
-
+var app = getApp();
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
 
@@ -161,6 +161,26 @@ Page({
 
       this.fetchPostsData(self.data);
     }    
+  },
+  onShow: function (options) {
+    // 小神推获取用户信息
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting["scope.userInfo"]) {
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res;
+              wx.login({
+                success: function (res) {
+                  var jsCode = res.code;
+                  app.aldpush.pushuserinfo(userInfo, jsCode);
+                }
+              })
+            }
+          })
+        }
+      }
+    })
   },
   //获取文章列表数据
   fetchPostsData: function (data) {

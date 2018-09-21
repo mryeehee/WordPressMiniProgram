@@ -300,7 +300,7 @@
   min-height: 30px;
   width: 51%;
   text-align: left;
-  border-bottom: 1px solid #2f89fc;
+  /*border-bottom: 1px solid #2f88fc23;*/
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

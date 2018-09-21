@@ -41,7 +41,7 @@ Page({
         isLastPage: false,
         parentID: "0",
         focus: false,
-        placeholder: "评论...",
+        placeholder: "写个评论...",
         postID: null,
         scrollHeight: 0,
         postList: [],
@@ -78,6 +78,26 @@ Page({
         new ModalView;
 
     },
+  onShow: function (options) {
+    // 小神推获取用户信息
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting["scope.userInfo"]) {
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res;
+              wx.login({
+                success: function (res) {
+                  var jsCode = res.code;
+                  app.aldpush.pushuserinfo(userInfo, jsCode);
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+  },
     showLikeImg: function () {
         var self = this;
         var flag = false;
@@ -133,6 +153,29 @@ Page({
             }
         }
     },
+    // 图片保存到本地按钮
+  saveImgToPhotosAlbumTap: function () {
+    wx.downloadFile({
+      url: this.data.detail.post_thumbnail_image,
+      success: function (res) {
+        console.log(res)
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success: function (res) {
+            console.log(res)
+          },
+          fail: function (res) {
+            console.log(res)
+            console.log('fail')
+          }
+        })
+      },
+      fail: function () {
+        console.log('fail')
+      }
+    })
+
+  },
     gotowebpage: function () {
         var self = this;
         self.ShowHideMenu();
@@ -644,7 +687,7 @@ Page({
                 if (text === '') {
                     self.setData({
                         parentID: "0",
-                        placeholder: "评论...",
+                        placeholder: "写个评论...",
                         userid: "",
                         toFromId: "",
                         commentdate: ""
@@ -711,7 +754,7 @@ Page({
                                     content: '',
                                     parentID: "0",
                                     userid: 0,
-                                    placeholder: "评论...",
+                                    placeholder: "写个评论...",
                                     focus: false,
                                     commentsList: []
 

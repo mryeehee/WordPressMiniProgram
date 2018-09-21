@@ -12,6 +12,7 @@
 var Api = require('../../utils/api.js');
 var util = require('../../utils/util.js');
 var WxParse = require('../../wxParse/wxParse.js');
+var app = getApp();
 
 Page({
   data: {
@@ -24,6 +25,26 @@ Page({
   onLoad: function (options) {
     this.fetchData(options.id),
       this.fetchPagesData()
+  },
+  onShow: function (options) {
+    // 小神推获取用户信息
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting["scope.userInfo"]) {
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res;
+              wx.login({
+                success: function (res) {
+                  var jsCode = res.code;
+                  app.aldpush.pushuserinfo(userInfo, jsCode);
+                }
+              })
+            }
+          })
+        }
+      }
+    })
   },
   fetchData: function (id) {
     var self = this;

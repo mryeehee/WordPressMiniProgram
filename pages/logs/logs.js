@@ -10,6 +10,7 @@
  */
 
 var util = require('../../utils/util.js')
+var app = getApp();
 Page({
   data: {
     logs: []
@@ -19,6 +20,26 @@ Page({
       logs: (wx.getStorageSync('logs') || []).map(function (log) {
         return util.formatTime(new Date(log))
       })
+    })
+  },
+  onShow: function (options) {
+    // 小神推获取用户信息
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting["scope.userInfo"]) {
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res;
+              wx.login({
+                success: function (res) {
+                  var jsCode = res.code;
+                  app.aldpush.pushuserinfo(userInfo, jsCode);
+                }
+              })
+            }
+          })
+        }
+      }
     })
   }
 })
