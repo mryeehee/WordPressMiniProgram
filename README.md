@@ -3,6 +3,8 @@
 作者：叶赫先生 Wechat ID: ryan_yuu
 
 
+
+
 #### 重构功能清单：
 
 1.重构首页内容列表的显示方式，分为：右图模式、大图模式、双图模式；
@@ -26,6 +28,8 @@
 10.增加评论提交审核功能；
 
 
+
+
 #### TO DO LIST
 
 1.增加用户投稿功能；
@@ -35,20 +39,27 @@
 3.其他个性化功能；
 
 
+
 #### 技术支持网站：https://www.yeehee.cn
+
 
 
 #### 小程序配套wordpress插件：
 
 本小程序完整使用需要配合原作者（imxjb）编写的wordpress插件wp-rest-api-for-app，才能完整使用，插件下载地址： https://github.com/iamxjb/wp-rest-api-for-app
 
+
+
 #### 小程序配套赞赏（微信支付）功能服务端程序：
 
 本小程序赞赏功能需要配合原作者（imxjb）编写微信支付服务端php程序，才能使用，程序下载地址： https://github.com/iamxjb/weixin-app-wxpay
 
+
+
 #### 开源协议：MIT
 
 #### 技术支持微信：ryan_yuu
+
 
 
 #### 讨论微信群：
