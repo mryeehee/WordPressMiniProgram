@@ -9,10 +9,12 @@
  */
 
 var push = require('./utils/pushsdk.js');
-const ald = require('./utils/ald-stat.js')
+
+const ald = require('./utils/ald-stat.js');
+var vPush = require('./utils/vpush/_vpush.js');
 
 App({
-    
+    vPush,
   onLaunch: function () {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
