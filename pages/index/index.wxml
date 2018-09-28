@@ -84,7 +84,7 @@
                     </view>
                 </navigator>
             </view>-->
-            <!-- 绑定同一公众号关联的其他小程序 end -->
+            <!-- 绑定同<vpush-view>一公众号关联的其他小程序 end -->
 
             <block wx:for="{{topNav}}" wx:key="id">
                 <view class="top-item" 
@@ -98,7 +98,7 @@
                       <image src="{{item.image}}"></image>
                     </view>
                     <view>
-                      <text>{{item.name}}</text>
+                      <vpush-view><text>{{item.name}}</text></vpush-view>
                     </view>
                 </view>
             </block>
@@ -107,7 +107,7 @@
                         <image src="../../images/kefu.svg"></image>
                     </view>
                     <view>
-                        <text>咨询</text>
+                        <vpush-view><text>咨询</text></vpush-view>
                     </view>
                     <button class="share-button" open-type="contact">
                     </button>
@@ -119,7 +119,9 @@
     <view class="container">
      <!-- 加载图文列表 -->
         <view class="index-container">
-            <template is="tempCommonList" data="{{postsList}}" />
+
+              <template is="tempCommonList" data="{{postsList}}" />
+
 
             <view class="loadingmore" style="display:{{floatDisplay}}">
             <!-- 

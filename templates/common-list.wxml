@@ -4,12 +4,14 @@
     <block wx:key="id" wx:for="{{postsList}}">
       <!-- 开始判断列表内容的第3列，样式重新排列 //大图模式 -->
       <view wx:if="{{index%10==2}}">
-        <view bindtap="tap" style="position:relative">
+        <view bindtap="Detail" style="position:relative">
           <form bindsubmit="pushFormSubmit" report-submit='true'>
-            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";min-height:600rpx; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
+            <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";min-height:344px; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
             <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
               <view class="content-title content-title-100">
-                <text>{{item.title.rendered}}</text>
+                <vpush-view>
+                  <text>{{item.title.rendered}}</text>
+                </vpush-view>
               </view>
 
               <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
@@ -42,12 +44,14 @@
       </view>
       <!-- 开始判断列表内容的第4列，样式重新排列 // 双图模式 -->
       <view wx:elif="{{index%10==3}}">
-        <view bindtap="tap" style="position:relative">
+        <view bindtap="Detail" style="position:relative">
           <form bindsubmit="pushFormSubmit" report-submit='true'>
             <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
             <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
               <view class="content-title content-title-100" style="margin-top:180px;">
-                <text>{{item.title.rendered}}</text>
+                <vpush-view>
+                  <text>{{item.title.rendered}}</text>
+                </vpush-view>
               </view>
 
               <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
@@ -85,12 +89,14 @@
       </view>
       <!-- 开始判断列表内容的第9列，样式重新排列 // 大图模式-->
       <view wx:elif="{{index%10==8}}">
-        <view bindtap="tap" style="position:relative">
+        <view bindtap="Detail" style="position:relative">
           <form bindsubmit="pushFormSubmit" report-submit='true'>
             <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
             <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
               <view class="content-title content-title-100">
-                <text>{{item.title.rendered}}</text>
+                <vpush-view>
+                  <text>{{item.title.rendered}}</text>
+                </vpush-view>
               </view>
 
               <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
@@ -122,12 +128,14 @@
       </view>
       <!-- 开始判断列表内容的第12列，样式重新排列 // 大图模式-->
       <view wx:elif="{{index%10==11}}">
-        <view bindtap="tap" style="position:relative">
+        <view bindtap="Detail" style="position:relative">
           <form bindsubmit="pushFormSubmit" report-submit='true'>
             <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
             <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
               <view class="content-title content-title-100">
-                <text>{{item.title.rendered}}</text>
+                <vpush-view>
+                  <text>{{item.title.rendered}}</text>
+                </vpush-view>
               </view>
 
               <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
@@ -159,12 +167,14 @@
       </view>
       <!-- 开始判断列表内容的第17列，样式重新排列 // 双图模式 -->
       <view wx:elif="{{index%10==16}}">
-        <view bindtap="tap" style="position:relative">
+        <view bindtap="Detail" style="position:relative">
           <form bindsubmit="pushFormSubmit" report-submit='true'>
             <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
             <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
               <view class="content-title content-title-100" style="margin-top:180px;">
-                <text>{{item.title.rendered}}</text>
+                <vpush-view>
+                  <text>{{item.title.rendered}}</text>
+                </vpush-view>
               </view>
 
               <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
@@ -199,12 +209,14 @@
       </view>
       <!-- 除去满足以上条件以外的列表内容，默认排列 // 右图模式 -->
       <view wx:else>
-        <view bindtap="tap" style="position:relative">
+        <view bindtap="Detail" style="position:relative">
           <form bindsubmit="pushFormSubmit" report-submit='true'>
             <button style='-webkit-transform: scale(0.5);transform:scale(1);content:"";height:100%; width: 100%;border:1px solid transparent;background-color:transparent; position: absolute; top: 0; left: 0' plain="true" formType="submit"></button>
             <view class="list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
               <view class="content-title">
-                <text>{{item.title.rendered}}</text>
+                <vpush-view>
+                  <text>{{item.title.rendered}}</text>
+                </vpush-view>
               </view>
 
               <view class="content-date">

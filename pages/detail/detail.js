@@ -19,8 +19,8 @@ var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
 
 //const Zan = require('../../vendor/ZanUI/index')
-
 var app = getApp();
+
 let isFocusing = false
 const pageCount = config.getPageCount;
 
@@ -163,15 +163,32 @@ Page({
           filePath: res.tempFilePath,
           success: function (res) {
             console.log(res)
+            wx.showToast({
+              title: 'Oppss!下载成功',
+              icon: 'success',
+              duration: 900,
+              success: function () {
+              }
+            })
           },
           fail: function (res) {
             console.log(res)
             console.log('fail')
+            wx.showToast({
+              title: "Aho!下载失败...",
+              mask: true,
+              duration: 2000
+            })
           }
         })
       },
       fail: function () {
         console.log('fail')
+        wx.showToast({
+          title: "Aho!下载失败...",
+          mask: true,
+          duration: 2000
+        });
       }
     })
 

@@ -16,6 +16,7 @@ var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
+var { vPush } = getApp();
 var app = getApp();
 
 
@@ -119,26 +120,12 @@ Page({
     });
        
   },
-  onShow: function (options) {
-    // 小神推获取用户信息
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting["scope.userInfo"]) {
-          wx.getUserInfo({
-            success: function (res) {
-              var userInfo = res;
-              wx.login({
-                success: function (res) {
-                  var jsCode = res.code;
-                  app.aldpush.pushuserinfo(userInfo, jsCode);
-                }
-              })
-            }
-          })
-        }
-      }
-    })
+
+  /* vPush推送绑定事件 */ 
+  vPushHandler: function (e) {
+    vPush.add(e);
   },
+
   /* 这里实现控制中间凸显图片的样式 */
   handleChange: function (e) {
     this.setData({

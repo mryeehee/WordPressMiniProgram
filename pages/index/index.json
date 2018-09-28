@@ -1,1 +1,7 @@
-{"enablePullDownRefresh": true}
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "vpush-view": "/utils/vpush/view",
+    "vpush-nav": "/utils/vpush/navigation"
+  }
+}
