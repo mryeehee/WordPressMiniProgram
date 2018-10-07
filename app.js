@@ -8,8 +8,6 @@
  * Copyright (c) 2017 https://www.yeehee.cn All rights reserved.
  */
 
-var push = require('./utils/pushsdk.js');
-
 const ald = require('./utils/ald-stat.js');
 var vPush = require('./utils/vpush/_vpush.js');
 

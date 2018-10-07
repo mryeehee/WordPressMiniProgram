@@ -135,24 +135,7 @@ Page({
   
   onShow: function (options){
       wx.setStorageSync('openLinkCount', 0);
-      // 小神推获取用户信息
-      wx.getSetting({
-        success: function (res) {
-          if (res.authSetting["scope.userInfo"]) {
-            wx.getUserInfo({
-              success: function (res) {
-                var userInfo = res;
-                wx.login({
-                  success: function (res) {
-                    var jsCode = res.code;
-                    app.aldpush.pushuserinfo(userInfo, jsCode);
-                  }
-                })
-              }
-            })
-          }
-        }
-      })
+
   },  
   fetchTopFivePosts: function () {
     var self = this;

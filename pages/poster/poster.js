@@ -46,24 +46,7 @@ Page({
         
     }, 
   onShow: function (options) {
-    // 小神推获取用户信息
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting["scope.userInfo"]) {
-          wx.getUserInfo({
-            success: function (res) {
-              var userInfo = res;
-              wx.login({
-                success: function (res) {
-                  var jsCode = res.code;
-                  app.aldpush.pushuserinfo(userInfo, jsCode);
-                }
-              })
-            }
-          })
-        }
-      }
-    })
+
   },
     savePosterImage:function()
     {

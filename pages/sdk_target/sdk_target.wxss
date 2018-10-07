@@ -1,1 +1,0 @@
-page { background-color: #fff; width: 100%; height: 100%; position: relative; } .load_auto { position: fixed; width: 249rpx; height: 311rpx; left: calc(50% - 124.5rpx); top: calc(35% - 155.1rpx) } .load_auto image{ width: 100%; height: 100%;}

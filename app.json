@@ -3,7 +3,6 @@
         "pages/index/index",
         "pages/detail/detail",
         "pages/logs/logs",
-        "pages/ence_push/ence_push",
         "pages/page/page",
         "pages/about/about",
         "pages/list/list",
