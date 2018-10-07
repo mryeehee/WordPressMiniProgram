@@ -40,17 +40,18 @@
                 "text": "专题"
             },
             {
+                "pagePath": "pages/about/about",
+                "iconPath": "images/tar-about.png",
+                "selectedIconPath": "images/tar-about-on-2.png",
+                "text": "服务"
+            },
+            {
                 "pagePath": "pages/readlog/readlog",
                 "iconPath": "images/tar-person.png",
                 "selectedIconPath": "images/tar-person-on-2.png",
                 "text": "我的"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "iconPath": "images/tar-about.png",
-                "selectedIconPath": "images/tar-about-on-2.png",
-                "text": "关于"
             }
+
         ]
     },
     "networkTimeout": {

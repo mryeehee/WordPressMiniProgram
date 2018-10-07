@@ -62,30 +62,6 @@
     <view style="display:{{floatDisplay}}">
         <!-- 图标导航 -->
         <view class="top-Nav">
-
-            <!-- 绑定同一公众号关联的其他小程序 start
-            * app-id： 为需要跳转的目标小程序appid；
-            * path: 为需要跳转的目标小程序的打开路径，默认为首页；
-            -->
-            <!--<view class="top-item">
-                <navigator 
-                target="miniProgram" 
-                open-type="navigate" 
-                app-id="wx4f706964b979122a" 
-                path="pages/topics/topics?group_id=145511852142" 
-                extra-data="" 
-                hover-class="none" 
-                version="release">
-                    <view>
-                      <image src="../../images/xingqiu.svg"></image>
-                    </view>
-                    <view>
-                      <text>星球</text>
-                    </view>
-                </navigator>
-            </view>-->
-            <!-- 绑定同<vpush-view>一公众号关联的其他小程序 end -->
-
             <block wx:for="{{topNav}}" wx:key="id">
                 <view class="top-item" 
                 catchtap="onNavRedirect" 
@@ -102,6 +78,28 @@
                     </view>
                 </view>
             </block>
+            <!-- 绑定同一公众号关联的其他小程序 start
+            * app-id： 为需要跳转的目标小程序appid；
+            * path: 为需要跳转的目标小程序的打开路径，默认为首页；
+            -->
+            <view class="top-item">
+                <navigator 
+                target="miniProgram" 
+                open-type="navigate" 
+                app-id="wxb6bde4eeb2d43820" 
+                path="pages/index/index" 
+                extra-data="" 
+                hover-class="none" 
+                version="release">
+                    <view>
+                      <image src="../../images/xcx.svg"></image>
+                    </view>
+                    <view>
+                      <vpush-view><text>简版</text></vpush-view>
+                    </view>
+                </navigator>
+            </view>
+            <!-- 绑定同<vpush-view>一公众号关联的其他小程序 end -->
             <view class="top-item" style='width:10%; position: relative; float:left; text-align:center'>
                     <view>
                         <image src="../../images/kefu.svg"></image>

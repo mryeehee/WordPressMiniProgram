@@ -16,7 +16,7 @@
 var DOMAIN = "www.yeehee.cn";//配置域名,域名只修改此处。
 var MINAPPTYPE="1";//小程序的类型，如果是企业小程序请填：0 ，如果是个人小程序请填：1
 var WEBSITENAME="叶赫先生"; //网站名称
-var ABOUTID = 2; //wordpress网站"页面"的id,注意这个"页面"是wordpress的"页面"，不是"文章"
+var ABOUTID = 100; //wordpress网站"页面"的id,注意这个"页面"是wordpress的"页面"，不是"文章"
 var PAGECOUNT='7'; //每页文章数目
 var CATEGORIESID='all'  //专题页显示全部的分类
 //var CATEGORIESID = '1,2,3,4,20';//指定专题页显示的分类的id
@@ -39,8 +39,8 @@ var DOWNLOADFILEDOMAIN = [
  //         'extraData'当redirecttype为miniapp时，这个值为提交到其他微信小程序的参数，如果redirecttype为apppage，webpage时，这个值设置为空。
 var INDEXNAV = [
   { id: '1', name: '热门教程', image: '../../images/qddesign.svg', url: '../list/list?categoryID=4', redirecttype: 'apppage', appid: '', extraData:'' },
-  { id: '2', name: '随笔小记', image: '../../images/sbnote.svg', url: '../list/list?categoryID=1', redirecttype: 'apppage', appid: '', extraData:''},   
-  { id: '3', name: '热门排行', image: '../../images/ranking.svg', url: '../hot/hot', redirecttype: 'apppage', appid: '', extraData: '' },
+  { id: '2', name: '随笔', image: '../../images/sbnote.svg', url: '../list/list?categoryID=1', redirecttype: 'apppage', appid: '', extraData:''},   
+  { id: '3', name: '排行榜', image: '../../images/ranking.svg', url: '../hot/hot', redirecttype: 'apppage', appid: '', extraData: '' },
    ]
 
 export default {
