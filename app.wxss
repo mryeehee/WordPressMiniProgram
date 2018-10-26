@@ -102,7 +102,7 @@
 
 .common-list .list-item.has-img .content-title {
   margin-right: 200rpx;
-  height: 80rpx;
+  height: auto;
   margin-bottom: 70rpx;
 }
 
