@@ -39,11 +39,13 @@ module.exports = {
     return url;
 
   },
+
   // 获取多个分类文章列表数据
   getPostsByCategories: function (categories) {
       var url = HOST_URI + 'posts?per_page=20&orderby=date&order=desc&page=1&categories=' + categories;
       return url;
   },
+
 // 获取置顶的文章
   getStickyPosts: function () {
     var url = HOST_URI + 'posts?sticky=true&per_page=5&page=1';
