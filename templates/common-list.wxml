@@ -1,6 +1,5 @@
 <template name="tempCommonList">
 
-
   <view class="common-list">
     <block wx:key="id" wx:for="{{postsList}}">
       <!-- 开始判断列表内容的第3列，样式重新排列 //大图模式 -->
@@ -13,7 +12,7 @@
           </view>
 
           <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
           </view>
 
           <view class="content-date" style='margin-right:0;'>
@@ -23,7 +22,7 @@
             </block>
 
             <!--image src="../../images/calendar.png"></image>
-                      <text>{{item.date}}</text-->
+                    <text>{{item.date}}</text-->
 
             <image src="../../images/pageviews.png"></image>
             <text class="">{{item.pageviews}}</text>
@@ -48,7 +47,7 @@
           </view>
 
           <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
           </view>
 
           <view class="content-date" style='margin-right:0;'>
@@ -57,7 +56,7 @@
             </block>
 
             <!--image src="../../images/calendar.png"></image>
-                      <text>{{item.date}}</text-->
+                    <text>{{item.date}}</text-->
 
             <image src="../../images/pageviews.png"></image>
             <text class="">{{item.pageviews}}</text>
@@ -71,10 +70,14 @@
           </view>
 
           <!-- 调取文章首图、特色图，进行重新排版 -->
-          <view>
+          <view wx:if="{{item.content_first_image}}">
             <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100" style='width:50%;height:165px;margin-right:50%'></image>
             <image src="{{item.content_first_image}}" mode="aspectFill" class="cover cover-100" style='width:48%;height:165px;'></image>
           </view>
+          <view wx:else>
+            <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
+          </view>
+
         </view>
       </view>
       <!-- 开始判断列表内容的第9列，样式重新排列 // 大图模式-->
@@ -87,7 +90,7 @@
           </view>
 
           <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
           </view>
 
           <view class="content-date" style='margin-right:0;'>
@@ -96,7 +99,7 @@
             </block>
 
             <!--image src="../../images/calendar.png"></image>
-                      <text>{{item.date}}</text-->
+                    <text>{{item.date}}</text-->
 
             <image src="../../images/pageviews.png"></image>
             <text class="">{{item.pageviews}}</text>
@@ -121,7 +124,7 @@
           </view>
 
           <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
           </view>
 
           <view class="content-date" style='margin-right:0;'>
@@ -130,7 +133,7 @@
             </block>
 
             <!--image src="../../images/calendar.png"></image>
-                    <text>{{item.date}}</text-->
+                  <text>{{item.date}}</text-->
 
             <image src="../../images/pageviews.png"></image>
             <text class="">{{item.pageviews}}</text>
@@ -155,7 +158,7 @@
           </view>
 
           <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text>
+            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
           </view>
 
           <view class="content-date" style='margin-right:0;'>
@@ -175,10 +178,14 @@
           </view>
 
           <!-- 调取文章首图、特色图，进行重新排版 -->
-          <view>
+          <view wx:if="{{item.content_first_image}}">
             <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100" style='width:50%;height:165px;margin-right:50%'></image>
             <image src="{{item.content_first_image}}" mode="aspectFill" class="cover cover-100" style='width:48%;height:165px;'></image>
           </view>
+          <view wx:else>
+            <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
+          </view>
+
         </view>
       </view>
       <!-- 除去满足以上条件以外的列表内容，默认排列 // 右图模式 -->
@@ -196,7 +203,7 @@
             </block>
 
             <!--image src="../../images/calendar.png"></image>
-                    <text>{{item.date}}</text-->
+                  <text>{{item.date}}</text-->
 
             <image src="../../images/pageviews.png"></image>
             <text class="">{{item.pageviews}}</text>
