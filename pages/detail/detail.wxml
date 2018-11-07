@@ -27,7 +27,6 @@
     {{detail.title.rendered}}
   </view>
 
-
   <view class="entry-date" style='margin-bottom:10rpx;'>
     <block wx:if="{{detail.category_name !=null}}">
       <text class="entry-icon-text">{{detail.category_name}}</text>
@@ -49,6 +48,14 @@
 
 <view class="container" style='padding: 0 28rpx'>
   <view class="container" style='padding:0;'>
+  
+    <!-- 输出文章内的视频，wx:if为条件判断，如果有视频vid则显示，无则不显示 -->
+    <view class='video_st'>
+      <block wx:if="{{detail.wexinvideovid}}">
+        <txv-video vid="{{detail.wexinvideovid}}" playerid="{{detail.wexinvideovid}}" autoplay=""></txv-video>
+      </block>
+    </view>
+
     <view class="content-article-detail" style="display:{{display}}">
       <view class="entry-summary">
         <template is="wxParse" data="{{wxParseData:article.nodes}}" />

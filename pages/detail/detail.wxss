@@ -15,6 +15,7 @@
 
 .fd {
   position: relative;
+  /*top: 0rpx;*/
   padding:24rpx;
   background-color:#ffffff;
   /*box-shadow:2rpx 2rpx 40rpx rgba(0, 0, 0, 0.12);*/
@@ -35,12 +36,15 @@
 .img-mask {
   width:100%;
   height:400rpx;
-  filter: brightness(.5);
+  filter: brightness(.85); /* 这里控制详情页头图的暗度，数值越小暗度越大，反之则暗度越小*/
   /*filter: blur(60rpx)*/
 }
+
+.video_st {
+  margin: auto;
+}
 .content-article-detail {
-  margin-top: 40rpx;
-  margin-bottom: 24px;
+  margin: 24rpx auto;
   border-bottom: 1rpx solid #eee;
 }
 
