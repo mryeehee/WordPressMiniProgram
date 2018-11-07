@@ -1,62 +1,70 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/detail/detail",
-        "pages/logs/logs",
-        "pages/page/page",
-        "pages/about/about",
-        "pages/list/list",
-        "pages/topic/topic",
-        "pages/readlog/readlog",
-        "pages/hot/hot",
-        "pages/webpage/webpage",
-        "pages/comments/comments",
-        "pages/poster/poster"
-    ],
-    "window": {
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#2f89fc",
-        "navigationBarTitleText": "叶赫先生",
-        "navigationBarTextStyle": "white",
-        "navigationStyle": "default"
-    },
-    "tabBar": {
-        "color": "#9BABBA",
-        "selectedColor": "#2f89fc",
-        "borderStyle": "gray",
-        "backgroundColor": "#fefefe",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "iconPath": "images/tar-home.png",
-                "selectedIconPath": "images/tar-home-on-2.png",
-                "text": "首页"
-            },
-            {
-                "pagePath": "pages/topic/topic",
-                "iconPath": "images/tar-topic.png",
-                "selectedIconPath": "images/tar-topic-on-2.png",
-                "text": "专题"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "iconPath": "images/tar-about.png",
-                "selectedIconPath": "images/tar-about-on-2.png",
-                "text": "服务"
-            },
-            {
-                "pagePath": "pages/readlog/readlog",
-                "iconPath": "images/tar-person.png",
-                "selectedIconPath": "images/tar-person-on-2.png",
-                "text": "我的"
-            }
-
-        ]
-    },
-    "networkTimeout": {
-        "request": 10000,
-        "connectSocket": 10000,
-        "uploadFile": 10000,
-        "downloadFile": 10000
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/logs/logs",
+    "pages/page/page",
+    "pages/about/about",
+    "pages/list/list",
+    "pages/topic/topic",
+    "pages/readlog/readlog",
+    "pages/hot/hot",
+    "pages/webpage/webpage",
+    "pages/comments/comments",
+    "pages/poster/poster"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#2f89fc",
+    "navigationBarTitleText": "叶赫先生",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#9BABBA",
+    "selectedColor": "#2f89fc",
+    "borderStyle": "gray",
+    "backgroundColor": "#fefefe",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tar-home.png",
+        "selectedIconPath": "images/tar-home-on-2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/topic/topic",
+        "iconPath": "images/tar-topic.png",
+        "selectedIconPath": "images/tar-topic-on-2.png",
+        "text": "专题"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "images/tar-about.png",
+        "selectedIconPath": "images/tar-about-on-2.png",
+        "text": "服务"
+      },
+      {
+        "pagePath": "pages/readlog/readlog",
+        "iconPath": "images/tar-person.png",
+        "selectedIconPath": "images/tar-person-on-2.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.2.2",
+      "provider": "wxa75efa648b60994b"
     }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxb6bde4eeb2d43820"
+  ]
 }
