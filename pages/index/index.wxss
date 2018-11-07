@@ -8,7 +8,10 @@
  * Copyright (c) 2017 https://www.yeehee.cn All rights reserved.
  *
  */
-
+.scroll-view {
+  width: 100%;
+  white-space: normal;
+}
 .index-container {
   /* padding: 0 24rpx; */
   background-color: #fff;
@@ -45,7 +48,7 @@ swiper image {
   height: 100%;
 }
 
-swiper .itemImg{
+swiper .itemImg {
   position: absolute;
   width: 100%;
   height: 380rpx;
@@ -53,11 +56,12 @@ swiper .itemImg{
   opacity: 0.7;
   top: 4.3%;
 }
-swiper .active{
+
+swiper .active {
   opacity: 1;
   z-index: 10;
   height: 420rpx;
-  transition:all .2s ease-in 0s;
+  transition: all 0.2s ease-in 0s;
   top: 0%;
 }
 
@@ -76,7 +80,7 @@ swiper .swiper-desc {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 26rpx;
- /* height: 120rpx; */
+  /* height: 120rpx; */
   text-shadow: 0px 0px 16px #646d75;
 }
 
@@ -144,37 +148,430 @@ swiper .swiper-desc {
   vertical-align: middle;
 }
 
+.top-Nav {
+  display: flex;
+  padding: 8rpx 20rpx 25rpx;
+  background: #fff;
+  justify-content: space-around;
+  /*border-bottom: 1px solid #eee;*/
+}
 
-.top-Nav{
-display: flex;
-padding: 8rpx 20rpx 25rpx;
-background: #fff;
-justify-content:space-around;
-border-bottom: 1px solid #eee;
+.top-item {
+  text-align: center;
 }
-.top-item{
-text-align: center;
+
+.top-item button {
+  text-align: center;
 }
-.top-item image{
-/* width: 58rpx;
+
+.top-item image {
+  /* width: 58rpx;
 height: 58rpx; */
-width: 60rpx;
-height: 60rpx;
-}
-.top-item text{
-line-height: 20rpx;
-font-size: 14px;
+  width: 60rpx;
+  height: 60rpx;
 }
 
+.top-item text {
+  line-height: 20rpx;
+  font-size: 14px;
+}
 
-.share-button{
-  opacity: 0; 
-  position:absolute;
+.share-button {
+  opacity: 0;
+  position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  top:0;
+  top: 0;
   left: 0;
-
 }
+
+.arrow-right {
+  display: inline-block;
+  width: 15rpx;
+  height: 21rpx;
+  margin-left: 8rpx;
+  background: url(https://xcxgy.cn/images/icon_next.png) center no-repeat;
+  background-size: 15rpx 21rpx;
+}
+
+.cms-tit {
+  margin: 15rpx 0 10rpx;
+  position: relative;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  line-height: 30rpx;
+  box-sizing: border-box;
+  vertical-align: text-bottom;
+}
+
+.cms-tit-left {
+  display: inline-block;
+  width: 12rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  margin-right: 12rpx;
+  margin-bottom: -4rpx;
+  background: /*linear-gradient(140deg,#ffd900,#FFD01D)*/#2f89fc;
+  box-sizing: border-box;
+}
+
+.cms-tit text {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 30rpx;
+  box-sizing: border-box;
+}
+
+.cms-tit-more {
+  display: block;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  font-weight: 300;
+  color: #999;
+  position: absolute;
+  top: 0;
+  right: 10rpx;
+}
+
+.share-button {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+.new_icon {
+  position: absolute;
+  bottom: 11rpx;
+  right: 0rpx;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  /*text-shadow: 1px 0 #000;*/
+  background-color: rgba(0, 0, 0, 0.18);
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  border-bottom-right-radius: 2rpx;
+  border-top-left-radius: 8rpx;
+}
+
+.cms-container {
+  padding: 50rpx 30rpx 50rpx 0;
+  margin-left: 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.border-b0 {
+  border-bottom: 0;
+}
+
+.mr-b {
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+.cms-tit {
+  margin: 15rpx 0;
+  position: relative;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 30rpx;
+  box-sizing: border-box;
+  vertical-align: text-bottom;
+}
+
+.cms-tit-left {
+  display: inline-block;
+  width: 12rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  margin-right: 12rpx;
+  margin-bottom: -4rpx;
+  background: /*linear-gradient(140deg,#ffd900,#FFD01D)*/#2f89fc;
+  box-sizing: border-box;
+}
+
+.cms-tit-txt {
+  display: inline-block;
+  height: 32rpx;
+  line-height: 32rpx;
+  box-sizing: border-box;
+}
+
+.cms-tit text {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 30rpx;
+  box-sizing: border-box;
+}
+
+.cms-tit-more {
+  display: block;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+  font-weight: 300;
+  color: #999;
+  position: absolute;
+  top: 0;
+  right: 30rpx;
+}
+
+.cms-cont {
+  position: relative;
+  white-space: nowrap;
+  padding-bottom: 2rpx;
+  width: 100%;
+  display: inline-block;
+  margin-right: 24rpx;
+}
+
+.cms-cont:last-child {
+  margin-right: 0rpx;
+}
+
+.cms-scroll {
+  padding: 20rpx 10rpx 40rpx 30rpx;
+  margin-left: -30rpx;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cms-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.mask-scrollbar {
+  height: 30rpx;
+  position: absolute;
+  bottom: 0;
+  left: -30rpx;
+  right: 0rpx;
+  background-color: #fff;
+}
+
+.cms-cont .mstOnePic-img {
+  height: 35vh;
+  width: 100%;
+  margin-top: 20rpx;
+  border-radius: 8rpx;
+}
+
+.cms-cont .img-text {
+  width: auto;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  color: #fff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 30rpx;
+}
+
+.mstTwoPicsPerRow-item:nth-child(even) .img-text {
+  left: 30rpx;
+}
+
+.cms-cont .img-text-one {
+  width: 650rpx;
+  height: 80rpx;
+}
+
+.cms-cont .enEdge {
+  bottom: 30rpx;
+  left: 30rpx;
+  width: 630rpx;
+}
+
+.img-text-large {
+  display: block;
+  font-size: 22rpx;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  line-height: 1.4em;
+}
+
+.img-text-small {
+  display: block;
+  font-size: 18rpx;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 5rpx 16rpx;
+}
+
+.enLarge {
+  font-size: 30rpx;
+}
+
+.scroll-item {
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.scroll-item .scroll-img {
+  width: 210rpx;
+  display: block;
+  margin-bottom: 18rpx;
+  border-radius: 12rpx;
+}
+
+.scroll-item .scroll-img-large {
+  width: 240rpx;
+  display: block;
+  margin-bottom: 0;
+  border-radius: 12rpx;
+}
+
+.scroll-item .scroll-text {
+  display: inline-block;
+  font-size: 28rpx;
+  font-weight: 300;
+  width: 210rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mstTwoPicsPerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mstTwoPicsPerRow-item {
+  position: relative;
+  flex: 0 1 50%;
+  margin-top: 20rpx;
+  padding-right: 10rpx;
+  box-sizing: border-box;
+}
+
+.mstTwoPicsPerRow-item:nth-child(even) {
+  padding-right: 0;
+  padding-left: 10rpx;
+}
+
+.mstTwoPicsPerRow-img {
+  height: 20vh;
+  width: 100%;
+  border-radius: 8rpx;
+}
+
+.mstTwoPicsPerRow-text {
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  color: #fff;
+}
+
+.mstThreePicsPerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mstThreePicsPerRow-item {
+  margin-top: 20rpx;
+}
+
+.mstThreePicsPerRow-img {
+  width: 218rpx;
+  border-radius: 12rpx;
+}
+
+.mstThreePicsPerRow-text {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 300;
+  width: 218rpx;
+  margin-top: 18rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pr0 {
+  padding-right: 0;
+  padding-bottom: 10rpx;
+}
+
+.more {
+  width: 240rpx;
+  margin-right: 20rpx;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 12rpx;
+}
+
+.bg-shadow {
+    position: absolute;
+    height: 142rpx;
+    bottom:  10rpx;
+    left: 0;
+    right: 10rpx;
+    background: linear-gradient(-180deg,rgba(53,53,53,0.00) 6%,rgba(0,0,0,0.70) 96%);
+    border-bottom-left-radius: 12rpx;
+    border-bottom-right-radius: 12rpx;
+}
+
+.mstTwoPicsPerRow-item:nth-child(even) .bg-shadow {
+    right: 0;
+    left: 10rpx;
+}
+
+.bg-shadow-one {
+    right: 0;
+}
+
+.mstGuest .scroll-item {
+    position: relative;
+}
+
+.mstGuest .bg-shadow {
+    right: 0;
+}
+
+.mstGuest .scroll-item .scroll-img {
+    margin-bottom: 0;
+}
+
+.mstGuest.cms-cont .img-text {
+    width: 170rpx;
+}
+
+.mstGuest .img-text-large {
+    margin-bottom: 16rpx;
+}
+.user-backimage{
+  position: fixed;
+  width:750rpx;
+  height: 520rpx;
+  left: 0%;
+  top:0%;
+
+  z-index:-10;
+  opacity: 1;
+}
+

@@ -2,6 +2,7 @@
   "enablePullDownRefresh": true,
   "usingComponents": {
     "vpush-view": "/utils/vpush/view",
-    "vpush-nav": "/utils/vpush/navigation"
+    "vpush-nav": "/utils/vpush/navigation",
+    "txv-video": "plugin://tencentvideo/video"
   }
 }

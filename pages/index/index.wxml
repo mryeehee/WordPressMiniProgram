@@ -14,41 +14,41 @@
 <import src="../../templates/copyright.wxml" />
 
 <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
-        <view class="search-pancel">
-          <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit"></input>
-            <button class="search-button" form-type="submit" size="mini" plain="true">
-              <icon type="search" color="#959595" size="12" />
-            </button>
-        </view>
+  <view class="search-pancel">
+    <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit"></input>
+    <button class="search-button" form-type="submit" size="mini" plain="true">
+      <icon type="search" color="#959595" size="12" />
+    </button>
+  </view>
 </form>
 
 <!-- 首页幻灯片 -->
 <view class="index-header" style="display:{{displaySwiper}}">
-    <swiper class="index-swiper" indicator-dots="" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)"  previous-margin="30rpx" next-margin="50rpx" circular="true" bindchange="handleChange">
-        <block wx:key="id" wx:for="{{postsShowSwiperList}}">
-            <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="">
-                <!--默认调取文章内容的第一张图片 -->
-                <!--
+  <swiper class="index-swiper" indicator-dots="" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)" previous-margin="30rpx" next-margin="50rpx" circular="true" bindchange="handleChange">
+    <block wx:key="id" wx:for="{{postsShowSwiperList}}">
+      <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="">
+        <!--默认调取文章内容的第一张图片 -->
+        <!--
                 <image mode="aspectFill" src="{{item.content_first_image}}" style="width:100%;" />
                 -->
-                <!-- 这里调取文章特色图像 -->
-                <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
-            </swiper-item>
-        </block>
-    </swiper>
+        <!-- 这里调取文章特色图像 -->
+        <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
+      </swiper-item>
+    </block>
+  </swiper>
 </view>
 
 <view class="showerror" style="display:{{showerror}}">
-    <image src="../../images/cry80.png" style="height:100rpx;width:100rpx"></image>
-    <view class="errortext">
-        暂时无法访问网络,下拉重试...
-    </view>
+  <image src="../../images/cry80.png" style="height:100rpx;width:100rpx"></image>
+  <view class="errortext">
+    暂时无法访问网络,下拉重试...
+  </view>
 </view>
 
 <view style="display:{{showallDisplay}}">
 
-    <!-- 首页搜索框 -->
-    <!--
+  <!-- 首页搜索框 -->
+  <!--
       <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
         <view class="search-pancel">
           <input value="" id="search-input" name="input" confirm-type="search" class="search-input" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit"></input>
@@ -59,78 +59,131 @@
     </form>
     -->
 
-    <view style="display:{{floatDisplay}}">
-        <!-- 图标导航 -->
-        <view class="top-Nav">
-            <block wx:for="{{topNav}}" wx:key="id">
-                <view class="top-item" 
-                catchtap="onNavRedirect" 
-                id="{{item.id}}" 
-                data-redicttype="{{item.redirecttype}}" 
-                data-url="{{item.url}}" 
-                data-appid="{{item.appid}}" 
-                data-extraData="{{item.extraData}}">
-                    <view>
-                      <image src="{{item.image}}"></image>
-                    </view>
-                    <view>
-                      <vpush-view><text>{{item.name}}</text></vpush-view>
-                    </view>
-                </view>
-            </block>
-            <!-- 绑定同一公众号关联的其他小程序 start
+  <view style="display:{{floatDisplay}}">
+    <!-- 图标导航 -->
+    <view class="top-Nav">
+      <block wx:for="{{topNav}}" wx:key="id">
+        <view class="top-item" catchtap="onNavRedirect" id="{{item.id}}" data-redicttype="{{item.redirecttype}}" data-url="{{item.url}}" data-appid="{{item.appid}}" data-extraData="{{item.extraData}}">
+          <view>
+            <image src="{{item.image}}"></image>
+          </view>
+          <view>
+            <vpush-view>
+              <text>{{item.name}}</text>
+            </vpush-view>
+          </view>
+        </view>
+      </block>
+      <!-- 绑定同一公众号关联的其他小程序 start
             * app-id： 为需要跳转的目标小程序appid；
             * path: 为需要跳转的目标小程序的打开路径，默认为首页；
             -->
-            <view class="top-item">
-                <navigator 
-                target="miniProgram" 
-                open-type="navigate" 
-                app-id="wxb6bde4eeb2d43820" 
-                path="pages/index/index" 
-                extra-data="" 
-                hover-class="none" 
-                version="release">
-                    <view>
-                      <image src="../../images/xcx.svg"></image>
-                    </view>
-                    <view>
-                      <vpush-view><text>简版</text></vpush-view>
-                    </view>
-                </navigator>
-            </view>
-            <!-- 绑定同<vpush-view>一公众号关联的其他小程序 end -->
-            <view class="top-item" style='width:10%; position: relative; float:left; text-align:center'>
-                    <view>
-                        <image src="../../images/kefu.svg"></image>
-                    </view>
-                    <view>
-                        <vpush-view><text>咨询</text></vpush-view>
-                    </view>
-                    <button class="share-button" open-type="contact">
-                    </button>
-            </view>
+      <view class="top-item">
+        <navigator target="miniProgram" open-type="navigate" app-id="wxb6bde4eeb2d43820" path="pages/index/index" extra-data="" hover-class="none" version="release">
+          <view>
+            <image src="../../images/xcx.svg"></image>
+          </view>
+          <view>
+            <vpush-view>
+              <text>简版</text>
+            </vpush-view>
+          </view>
+        </navigator>
+      </view>
+      <!-- 绑定同<vpush-view>一公众号关联的其他小程序 end -->
+      <view class="top-item" style='width:10%; position: relative; float:left; text-align:center'>
+        <view>
+          <image src="../../images/kefu.svg"></image>
         </view>
-        <!-- 图标导航 end -->
+        <view>
+          <vpush-view>
+            <text>咨询</text>
+          </vpush-view>
+        </view>
+        <button class="share-button" open-type="contact">
+        </button>
+      </view>
+    </view>
+    <!-- 图标导航 end -->
+  </view>
+
+  <!-- 网友推荐 -->
+  <view class="container">
+    <view class="cms-tit">
+      <view class="cms-tit-left"></view>
+      <view class="cms-tit-txt">网友推荐</view>
+      <!--navigator url="../list/list?categoryID=4" class="cms-tit-more">
+        更多
+        <view class="arrow-right"></view>
+      </navigator-->
     </view>
 
-    <view class="container">
-     <!-- 加载图文列表 -->
-        <view class="index-container">
+    <view class="cms-cont mstTwoPicsPerRow">
+      <block wx:key="id" wx:for="{{postsList1}}">
+        <view class="mstTwoPicsPerRow-item" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+          <image class="mstTwoPicsPerRow-img" mode="aspectFill" src="{{item.post_thumbnail_image}}"></image>
+          <!--view class="bg-shadow"></view-->
+          <view class="img-text">
+            <!--text class="img-text-large">{{item.title.rendered}}</text-->
+            <text class="img-text-small">{{item.pageviews}} 位网友推荐</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
 
-              <template is="tempCommonList" data="{{postsList}}" />
+  <!-- 精选资讯 start-->
+  <!--
+  <view class="container">
+    <view class="cms-tit">
+      <view class="cms-tit-left"></view>
+      <view class="cms-tit-txt">精选资讯</view>
+      <view class="cms-tit-more" data-foodlink="yeehee">
+      </view>
+    </view>
+    <scroll-view scroll-x="true" scroll-with-animation="true" style="display:flex;white-space:nowrap;padding:4rpx 0 24rpx;">
+      <view class="cms-cont" wx:key="id" wx:for="{{postsList3}}" style='width:93%'>
+        <view index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
+          <view class='video_st'>
+            <block wx:if="{{item.wexinvideovid}}">
+              <txv-video vid="{{item.wexinvideovid}}" playerid="{{item.wexinvideovid}}" autoplay="" height="35vh"></txv-video>
+            </block>
+            <block wx:else>
+              <image class="mstOnePic-img" mode="aspectFill" src="{{item.post_thumbnail_image}}"></image>
+            </block>
+          </view>
+          
+          <text class="new_icon">广告</text>
+          <view class="bg-shadow bg-shadow-one"></view>
+          <view class="img-text img-text-one">
+            <text class="img-text-large">{{item.title.rendered}}</text>
+            <text class="img-text-small"></text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  -->
+  <!-- 精选资讯 end-->
 
-
-            <view class="loadingmore" style="display:{{floatDisplay}}">
-            <!-- 
+  <view class="container">
+    <view class="cms-tit">
+      <view class="cms-tit-left"></view>
+      <view class="cms-tit-txt">最新文章</view>
+    </view>
+    <!-- 加载图文列表 -->
+    <view class="index-container">
+      <template is="tempCommonList" data="{{postsList}}" />
+      <view class="loadingmore" style="display:{{floatDisplay}}">
+        <!-- 
                 <view hidden="{{isLastPage}}">
                     <button class="more-button" formType="submit" size="mini" bindtap="loadMore">加载更多...</button>
                 </view>-->
-                <view class="no-more" hidden="{{!isLastPage}}">- 无更多文章 -</view>
-            </view>
-            <view class="copyright" style="display:{{floatDisplay}}">
-                <template is="tempCopyright" />
-            </view>
-        </view>
+        <view class="no-more" hidden="{{!isLastPage}}">- 无更多文章 -</view>
+      </view>
+      <view class="copyright" style="display:{{floatDisplay}}">
+        <template is="tempCopyright" />
+      </view>
     </view>
+  </view>
 </view>
