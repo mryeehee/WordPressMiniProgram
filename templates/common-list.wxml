@@ -3,7 +3,7 @@
   <view class="common-list">
     <block wx:key="id" wx:for="{{postsList}}">
       <!-- 开始判断列表内容的第3列，样式重新排列 //大图模式 -->
-      <view wx:if="{{index%10==2}}">
+      <view wx:if="{{index%10==0 || index%10==4 || index%10==8 || index%10==12 || index%10==16 || index%10==20 || index%10==24 || index%10==28}}">
         <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
           <view class="content-title content-title-100">
             <vpush-view>
@@ -12,7 +12,9 @@
           </view>
 
           <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
+            <vpush-view>
+              <text style='font-size:26rpx;color:#959595;margin:10rpx auto;'>{{item.excerpt.rendered}}</text>
+            </vpush-view>
           </view>
 
           <view class="content-date" style='margin-right:0;'>
@@ -38,7 +40,7 @@
         </view>
       </view>
       <!-- 开始判断列表内容的第4列，样式重新排列 // 双图模式 -->
-      <view wx:elif="{{index%10==3}}">
+      <view wx:elif="{{index%10==5 || index%10==5 || index%10==13 || index%10==17 || index%10==21 || index%10==25 || index%10==29}}">
         <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
           <view class="content-title content-title-100" style="margin-top:180px;">
             <vpush-view>
@@ -47,7 +49,9 @@
           </view>
 
           <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
+            <vpush-view>
+              <text style='font-size:26rpx;color:#959595;margin:10rpx auto;'>{{item.excerpt.rendered}}</text>
+            </vpush-view>
           </view>
 
           <view class="content-date" style='margin-right:0;'>
@@ -57,114 +61,6 @@
 
             <!--image src="../../images/calendar.png"></image>
                     <text>{{item.date}}</text-->
-
-            <image src="../../images/pageviews.png"></image>
-            <text class="">{{item.pageviews}}</text>
-
-            <image src="../../images/comments.png"></image>
-            <text class="">{{item.total_comments}}</text>
-
-            <image src="../../images/home-like.png"></image>
-            <text class="">{{item.like_count}}</text>
-
-          </view>
-
-          <!-- 调取文章首图、特色图，进行重新排版 -->
-          <view wx:if="{{item.content_first_image}}">
-            <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100" style='width:50%;height:165px;margin-right:50%'></image>
-            <image src="{{item.content_first_image}}" mode="aspectFill" class="cover cover-100" style='width:48%;height:165px;'></image>
-          </view>
-          <view wx:else>
-            <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
-          </view>
-
-        </view>
-      </view>
-      <!-- 开始判断列表内容的第9列，样式重新排列 // 大图模式-->
-      <view wx:elif="{{index%10==8}}">
-        <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-          <view class="content-title content-title-100">
-            <vpush-view>
-              <text>{{item.title.rendered}}</text>
-            </vpush-view>
-          </view>
-
-          <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
-          </view>
-
-          <view class="content-date" style='margin-right:0;'>
-            <block wx:if="{{item.category_name !=null}}">
-              <text>{{item.category_name}}</text>
-            </block>
-
-            <!--image src="../../images/calendar.png"></image>
-                    <text>{{item.date}}</text-->
-
-            <image src="../../images/pageviews.png"></image>
-            <text class="">{{item.pageviews}}</text>
-
-            <image src="../../images/comments.png"></image>
-            <text class="">{{item.total_comments}}</text>
-
-            <image src="../../images/home-like.png"></image>
-            <text class="">{{item.like_count}}</text>
-
-          </view>
-          <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
-        </view>
-      </view>
-      <!-- 开始判断列表内容的第12列，样式重新排列 // 大图模式-->
-      <view wx:elif="{{index%10==11}}">
-        <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-          <view class="content-title content-title-100">
-            <vpush-view>
-              <text>{{item.title.rendered}}</text>
-            </vpush-view>
-          </view>
-
-          <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
-          </view>
-
-          <view class="content-date" style='margin-right:0;'>
-            <block wx:if="{{item.category_name !=null}}">
-              <text>{{item.category_name}}</text>
-            </block>
-
-            <!--image src="../../images/calendar.png"></image>
-                  <text>{{item.date}}</text-->
-
-            <image src="../../images/pageviews.png"></image>
-            <text class="">{{item.pageviews}}</text>
-
-            <image src="../../images/comments.png"></image>
-            <text class="">{{item.total_comments}}</text>
-
-            <image src="../../images/home-like.png"></image>
-            <text class="">{{item.like_count}}</text>
-
-          </view>
-          <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="cover cover-100"></image>
-        </view>
-      </view>
-      <!-- 开始判断列表内容的第17列，样式重新排列 // 双图模式 -->
-      <view wx:elif="{{index%10==16}}">
-        <view class="list-item has-img w-100" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-          <view class="content-title content-title-100" style="margin-top:180px;">
-            <vpush-view>
-              <text>{{item.title.rendered}}</text>
-            </vpush-view>
-          </view>
-
-          <view class="content-title content-title-100" style='margin-top:0;margin-bottom:0'>
-            <vpush-view><text style='font-size:26rpx;color:#959595;margin:32rpx auto;'>{{item.excerpt.rendered}}</text></vpush-view>
-          </view>
-
-          <view class="content-date" style='margin-right:0;'>
-            <block wx:if="{{item.category_name !=null}}">
-              <text>{{item.category_name}}</text>
-            </block>
 
             <image src="../../images/pageviews.png"></image>
             <text class="">{{item.pageviews}}</text>
@@ -191,9 +87,15 @@
       <!-- 除去满足以上条件以外的列表内容，默认排列 // 右图模式 -->
       <view wx:else>
         <view class="list-item has-img" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-          <view class="content-title">
+          <view class="content-title" style='margin-bottom:10rpx;'>
             <vpush-view>
               <text>{{item.title.rendered}}</text>
+            </vpush-view>
+          </view>
+
+          <view class="content-title" style='margin-top:0;margin-bottom:10rpx;'>
+            <vpush-view>
+              <text style='font-size:26rpx;color:#959595;margin:10rpx auto;-webkit-line-clamp:1;'>{{item.excerpt.rendered}}</text>
             </vpush-view>
           </view>
 
