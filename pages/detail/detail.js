@@ -22,7 +22,9 @@ var wxRequest = require('../../utils/wxRequest.js')
 var app = getApp();
 let isFocusing = false
 const pageCount = config.getPageCount;
-const TxvContext = requirePlugin("tencentvideo");
+
+//const TxvContext = requirePlugin("tencentvideo");
+
 import {
   ModalView
 } from '../../templates/modal-view/modal-view.js'
@@ -77,12 +79,12 @@ Page({
     this.getEnableComment();
     this.fetchDetailData(options.id);
     new ModalView;
-
-    this.txvContext = txvContext.getTxvContext('txv0');
+    //this.txvContext = txvContext.getTxvContext('txv0');
   },
+  
   onShow: function(options) {
-
   },
+
   showLikeImg: function() {
     var self = this;
     var flag = false;

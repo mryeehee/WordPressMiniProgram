@@ -10,6 +10,7 @@
  */
  
 @import "vendor/ZanUI/index.wxss";
+@import "vendor/dist/index.wxss";
 
 .container {
   padding: 0 28rpx;

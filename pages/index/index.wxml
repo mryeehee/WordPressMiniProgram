@@ -27,12 +27,14 @@
   <swiper class="index-swiper" indicator-dots="" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)" previous-margin="30rpx" next-margin="50rpx" circular="true" bindchange="handleChange">
     <block wx:key="id" wx:for="{{postsShowSwiperList}}">
       <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="">
-        <!--默认调取文章内容的第一张图片 -->
-        <!--
-                <image mode="aspectFill" src="{{item.content_first_image}}" style="width:100%;" />
-                -->
-        <!-- 这里调取文章特色图像 -->
+        
+        <view wx:if="{{item.post_thumbnail_image}}"><!-- 默认调取文章内容的特色图片 -->
         <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
+        </view>
+        <view wx:else><!-- 如果没有特色图片时，这里调取文章内容里面的第一张图像 -->
+        <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.content_first_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
+        </view>
+
       </swiper-item>
     </block>
   </swiper>
@@ -100,7 +102,7 @@
             <text>咨询</text>
           </vpush-view>
         </view>
-        <button class="share-button" open-type="contact">
+        <button class="share-button" open-type="contact" bindtap="notifyAdmin">
         </button>
       </view>
     </view>
@@ -144,15 +146,7 @@
     <scroll-view scroll-x="true" scroll-with-animation="true" style="display:flex;white-space:nowrap;padding:4rpx 0 24rpx;">
       <view class="cms-cont" wx:key="id" wx:for="{{postsList3}}" style='width:93%'>
         <view index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
-          <view class='video_st'>
-            <block wx:if="{{item.wexinvideovid}}">
-              <txv-video vid="{{item.wexinvideovid}}" playerid="{{item.wexinvideovid}}" autoplay="" height="35vh"></txv-video>
-            </block>
-            <block wx:else>
-              <image class="mstOnePic-img" mode="aspectFill" src="{{item.post_thumbnail_image}}"></image>
-            </block>
-          </view>
-          
+            <image class="mstOnePic-img" mode="aspectFill" src="{{item.post_thumbnail_image}}"></image>
           <text class="new_icon">广告</text>
           <view class="bg-shadow bg-shadow-one"></view>
           <view class="img-text img-text-one">

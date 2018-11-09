@@ -20,7 +20,7 @@ var {
   vPush
 } = getApp();
 var app = getApp();
-const TxvContext = requirePlugin("tencentvideo");
+//const TxvContext = requirePlugin("tencentvideo");
 //let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
 
 Page({
@@ -112,26 +112,25 @@ Page({
     }
 
   },
-//  onLoad: function(options) {
-//    var self = this;
-//    this.fetchTopFivePosts();
-//    self.setData({
-//      topNav: config.getIndexNav
-//    });
-//  },
+  //  onLoad: function(options) {
+  //    var self = this;
+  //    this.fetchTopFivePosts();
+  //    self.setData({
+  //      topNav: config.getIndexNav
+  //    });
+  //  },
 
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     wx.request({
       //url: 'https://www.yeehee.cn/wp-json/watch-life-net/v1/post/static',
-      success: function (res) {
+      success: function(res) {
         var statics = res.data.static;
         that.setData({
           statics: statics,
         })
       },
-      fail: function () {
-      }
+      fail: function() {}
     })
 
     var that = this;
@@ -142,8 +141,6 @@ Page({
     that.setData({
       topNav: config.getIndexNav
     });
-    //this.txvContext = txvContext.getTxvContext('txv1');
-
   },
 
   /* vPush推送绑定事件 */
@@ -508,5 +505,31 @@ Page({
     wx.switchTab({
       url: url
     });
+  },
+
+  //设置首页咨询按钮点击事件：当用户点击咨询按钮时，自动推送一条消息给管理员
+  notifyAdmin: function() {
+    console.log('[*] 用户咨询，开始通知管理员。');
+    wx.request({
+      url: 'https://cloud.safedog.cc/vpush/functions/PUSH_API',
+      method: 'POST',
+      dataType: 'json',
+      header: {
+        'Content-Type': "application/json",
+        "X-Parse-Application-Id": "guren_cloud_vpush"
+      },
+      data: {
+        "id": "KgLSnOmGdS",
+        "secret": "448c2-1001c-ba07c-13bed",
+        "path": "pages/index/index",
+        // 这里填写管理员的openId
+        "openId": "oRM4C0fPs_4PiCL9WStRkHj1kGek",
+        "data": [
+          "叶赫先生",
+          new Date().toLocaleDateString(),
+          "有用户点击了反馈按钮，请前往客服系统mpkf.weixin.qq.com进行查看！"
+        ]
+      }
+    })
   }
 })

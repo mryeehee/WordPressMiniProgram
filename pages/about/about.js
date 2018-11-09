@@ -272,35 +272,30 @@ Page({
         });
         
         
-    }).then(res =>{        
-        var getAllPraiseRequest = wxRequest.getRequest(Api.getAllPraiseUrl());
-        getAllPraiseRequest.then(response =>{
+    })
+    //.then(res =>{        
+        //var getAllPraiseRequest = wxRequest.getRequest(Api.getAllPraiseUrl());
+        //getAllPraiseRequest.then(response =>{
+        //    if (response.data.status == '200') {
+        //        var _avatarurls = response.data.avatarurls;
+        //        var avatarurls = [];
+        //        for (var i = 0; i < _avatarurls.length; i++) {
+        //            var avatarurl = "../../images/gravatar.png";
+        //            if (_avatarurls[i].avatarurl.indexOf('wx.qlogo.cn') != -1) {
+        //                avatarurl = _avatarurls[i].avatarurl;
+        //            }
+        //            avatarurls[i] = avatarurl;
+        //        }               
+        //        self.setData({
+        //            praiseList: avatarurls
+        //        });
+        //    }
+        //    else {
+        //        console.log(response);
+        //    }
+        //})
 
-            if (response.data.status == '200') {
-
-                var _avatarurls = response.data.avatarurls;
-                var avatarurls = [];
-                for (var i = 0; i < _avatarurls.length; i++) {
-                    var avatarurl = "../../images/gravatar.png";
-                    if (_avatarurls[i].avatarurl.indexOf('wx.qlogo.cn') != -1) {
-                        avatarurl = _avatarurls[i].avatarurl;
-                    }
-                    avatarurls[i] = avatarurl;
-                }
-                
-                self.setData({
-                    praiseList: avatarurls
-                });
-
-            }
-            else {
-                console.log(response);
-            }
-
-
-        })
-
-    })    
+    //})    
     .then(res =>{
         if (!app.globalData.isGetOpenid) {
            // auth.getUsreInfo();

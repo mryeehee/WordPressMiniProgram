@@ -48,14 +48,6 @@
 
 <view class="container" style='padding: 0 28rpx'>
   <view class="container" style='padding:0;'>
-  
-    <!-- 输出文章内的视频，wx:if为条件判断，如果有视频vid则显示，无则不显示 -->
-    <view class='video_st'>
-      <block wx:if="{{detail.wexinvideovid}}">
-        <txv-video vid="{{detail.wexinvideovid}}" playerid="{{detail.wexinvideovid}}" autoplay=""></txv-video>
-      </block>
-    </view>
-
     <view class="content-article-detail" style="display:{{display}}">
       <view class="entry-summary">
         <template is="wxParse" data="{{wxParseData:article.nodes}}" />
@@ -104,11 +96,16 @@
       <view catchtap="clickLike" id="likebottom" class="likebtt">
         <text>点赞支持</text>
       </view>
-
-      <!--<view class="relatedTitle">
-                点赞支持 (点击❤支持一下)
-            </view>
-            <view class="entry-gap-zan"></view>-->
+      <!--
+      <view catchtap="downimageTolocal" class="likebtt">
+        <text>分享海报</text>
+      </view>
+      
+      <view class="relatedTitle">
+        点赞支持 (点击❤支持一下)
+      </view>
+      <view class="entry-gap-zan"></view>
+      -->
 
       <view class="likeText">
         <block wx:key="id" wx:for="{{likeList}}">
