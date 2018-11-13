@@ -77,7 +77,7 @@
 
 .common-list .list-item {
   position: relative;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px dashed #eee;
   padding: 24rpx 2rpx;
   min-height: 200rpx;
   overflow: hidden;

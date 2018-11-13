@@ -20,6 +20,8 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 
+  <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+  
   <zan-panel title="" style="width:100vw;border-top:20rpx solid #eee;">
     <zan-cell-group>
       <zan-cell title="热门排行" is-link url="../hot/hot"></zan-cell>

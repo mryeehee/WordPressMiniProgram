@@ -11,6 +11,7 @@
 
 var Api = require('../../utils/api.js');
 var util = require('../../utils/util.js');
+var auth = require('../../utils/auth.js');
 var WxParse = require('../../wxParse/wxParse.js');
 var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
@@ -43,7 +44,9 @@ Page({
     floatDisplay: "none",
     displayfirstSwiper: "none",
     currentIndex: 0,
-    topNav: []
+    topNav: [],
+    userInfo: app.globalData.userInfo,
+    isLoginPopup: false
 
 
   },
@@ -121,6 +124,15 @@ Page({
   //  },
 
   onLoad: function(options) {
+    var self = this;
+    if (!app.globalData.isGetOpenid) {
+      //self.getUsreInfo();
+      self.userAuthorization();
+    } else {
+      self.setData({
+        userInfo: app.globalData.userInfo
+      });
+    }
     var that = this;
     wx.request({
       //url: 'https://www.yeehee.cn/wp-json/watch-life-net/v1/post/static',
@@ -505,6 +517,130 @@ Page({
     wx.switchTab({
       url: url
     });
+  },
+
+  userAuthorization: function () {
+    var self = this;
+    // 判断是否是第一次授权，非第一次授权且授权失败则进行提醒
+    wx.getSetting({
+      success: function success(res) {
+        console.log(res.authSetting);
+        var authSetting = res.authSetting;
+        if (!('scope.userInfo' in authSetting)) {
+          //if (util.isEmptyObject(authSetting)) {
+          console.log('第一次授权');
+          self.setData({
+            isLoginPopup: true
+          })
+
+        } else {
+          console.log('不是第一次授权', authSetting);
+          // 没有授权的提醒
+          if (authSetting['scope.userInfo'] === false) {
+            wx.showModal({
+              title: '用户未授权',
+              content: '如需正常使用评论、点赞、赞赏等功能需授权获取用户信息。是否在授权管理中选中“用户信息”?',
+              showCancel: true,
+              cancelColor: '#296fd0',
+              confirmColor: '#296fd0',
+              confirmText: '设置权限',
+              success: function (res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                  wx.openSetting({
+                    success: function success(res) {
+                      console.log('打开设置', res.authSetting);
+                      var scopeUserInfo = res.authSetting["scope.userInfo"];
+                      if (scopeUserInfo) {
+                        auth.getUsreInfo(null);
+                      }
+                    }
+                  });
+                }
+              }
+            })
+          } else {
+            auth.getUsreInfo(null);
+          }
+        }
+      }
+    });
+  },
+  agreeGetUser: function (e) {
+    var userInfo = e.detail.userInfo;
+    var self = this;
+    if (userInfo) {
+      auth.getUsreInfo(e.detail);
+      self.setData({
+        userInfo: userInfo
+      })
+    }
+    setTimeout(function () {
+      self.setData({
+        isLoginPopup: false
+      })
+    }, 1200);
+
+  },
+  closeLoginPopup() {
+    this.setData({
+      isLoginPopup: false
+    });
+  },
+  openLoginPopup() {
+    this.setData({
+      isLoginPopup: true
+    });
+  },
+  confirm: function () {
+    this.setData({
+      'dialog.hidden': true,
+      'dialog.title': '',
+      'dialog.content': ''
+    })
+  },
+  getUsreInfo: function () {
+    var self = this;
+    var wxLogin = wxApi.wxLogin();
+    var jscode = '';
+    wxLogin().then(response => {
+      jscode = response.code
+      var wxGetUserInfo = wxApi.wxGetUserInfo()
+      return wxGetUserInfo()
+    }).
+      //获取用户信息
+      then(response => {
+        console.log(response.userInfo);
+        console.log("成功获取用户信息(公开信息)");
+        app.globalData.userInfo = response.userInfo;
+        app.globalData.isGetUserInfo = true;
+        self.setData({
+          userInfo: response.userInfo
+        });
+
+        var url = Api.getOpenidUrl();
+        var data = {
+          js_code: jscode,
+          encryptedData: response.encryptedData,
+          iv: response.iv,
+          avatarUrl: response.userInfo.avatarUrl
+        }
+        var postOpenidRequest = wxRequest.postRequest(url, data);
+        //获取openid
+        postOpenidRequest.then(response => {
+          if (response.data.status == '200') {
+            //console.log(response.data.openid)
+            console.log("openid 获取成功");
+            app.globalData.openid = response.data.openid;
+            app.globalData.isGetOpenid = true;
+          } else {
+            console.log(response.data.message);
+          }
+        })
+      }).catch(function (error) {
+        console.log('error: ' + error.errMsg);
+        self.userAuthorization();
+      })
   },
 
   //设置首页咨询按钮点击事件：当用户点击咨询按钮时，自动推送一条消息给管理员

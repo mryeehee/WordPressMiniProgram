@@ -12,6 +12,7 @@
 
 <import src="../../templates/common-list.wxml" />
 <import src="../../templates/copyright.wxml" />
+<import src="../../templates/login-popup.wxml" />
 
 <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
   <view class="search-pancel">
@@ -21,6 +22,8 @@
     </button>
   </view>
 </form>
+
+<template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
 
 <!-- 首页幻灯片 -->
 <view class="index-header" style="display:{{displaySwiper}}">
