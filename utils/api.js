@@ -37,14 +37,14 @@ module.exports = {
 
   },
 
-  // 获取指定分类20的文章数据
+  // 获取指定分类ID：20(首页：网友推荐)的文章数据
   getPostsByCategory: function (obj) {
-    var url = HOST_URI + 'posts?per_page=7&orderby=date&order=desc&page=1&categories=20';
+    var url = HOST_URI + 'posts?per_page=7&orderby=date&order=desc&page=1&categories=23';
     return url;
 
   },
 
-  // 获取指定分类4的文章数据
+  // 获取指定分类ID：4(首页：编辑推荐)的文章数据
   getPostsByCategory2: function (obj) {
     var url = HOST_URI + 'posts?per_page=7&orderby=date&order=desc&page=1&categories=4';
     return url;
