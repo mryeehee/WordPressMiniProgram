@@ -35,7 +35,7 @@
       <zan-cell title="意见反馈" is-link></zan-cell>
       <button class="feedback-button" open-type="feedback"></button>
       <zan-cell title="在线咨询" is-link></zan-cell>
-      <button class="contact-button" open-type="contact" bindtap="notifyAdmin"></button>
+      <button class="contact-button" open-type="contact" bindtap="notifyAdminForUsercenter"></button>
     </zan-cell-group>
   </zan-panel>
 

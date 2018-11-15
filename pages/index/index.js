@@ -644,8 +644,8 @@ Page({
   },
 
   //设置首页咨询按钮点击事件：当用户点击咨询按钮时，自动推送一条消息给管理员
-  notifyAdmin: function() {
-    console.log('[*] 用户咨询，开始通知管理员。');
+  notifyAdmin: function () {
+    console.log(' 用户咨询，开始通知管理员。');
     wx.request({
       url: 'https://cloud.safedog.cc/vpush/functions/PUSH_API',
       method: 'POST',
@@ -655,8 +655,8 @@ Page({
         "X-Parse-Application-Id": "guren_cloud_vpush"
       },
       data: {
-        "id": "KgLSnOmGdS",
-        "secret": "448c2-1001c-ba07c-13bed",
+        "id": "jmoQ2kyo5D",
+        "secret": "f1faf-496d1-de9c8-1438b",
         "path": "pages/index/index",
         // 这里填写管理员的openId
         "openId": "oRM4C0fPs_4PiCL9WStRkHj1kGek",

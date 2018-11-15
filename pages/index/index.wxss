@@ -139,6 +139,7 @@ swiper .swiper-desc {
   /* margin-top: 8px; */
   padding: 24rpx;
   background: #2f89fc;
+  border-radius:0 0 50rpx 50rpx;
 }
 
 .search-pancel image {
@@ -299,6 +300,8 @@ height: 58rpx; */
   margin-bottom: -4rpx;
   background: /*linear-gradient(140deg,#ffd900,#FFD01D)*/#2f89fc;
   box-sizing: border-box;
+  border-radius:20rpx;
+
 }
 
 .cms-tit-txt {
