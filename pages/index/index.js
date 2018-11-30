@@ -48,12 +48,13 @@ Page({
     isLoginPopup: false,
     appId: "wx8abaf00ee8c3202e",
     extraData: {
-      // 把1221数字换成你的产品ID，否则会跳到别的产品
+      // 登陆https://tucao.qq.com/，注册账号，创建实例产品ID
+      // 把45980数字换成你的产品ID，否则会跳到我的产品
       id: "45980",
-      // 自定义参数，具体参考文档
+      // 自定义参数，具体参考文档，不懂的就默认
       customData: {
-        clientInfo: `iPhone OS 10.3.1 / 3.2.0.43 / 0`,
-        imei: '7280BECE2FC29544172A2B858E9E90D0'
+        customInfo: `Mr.Yeehee`,
+        clientVersion: 'version 2.1.8'
       }
     }
 

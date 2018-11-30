@@ -99,7 +99,7 @@
       </view>
       <!-- 绑定同一公众号关联的其他小程序 end -->
 
-      <!-- 绑定吐槽社区功能 -->
+      <!-- 绑定吐槽社区功能 同时，请在index.js的extraData里面修改配置信息 -->
       <view class="top-item" style='width:10%; position: relative; float:left; text-align:center'>
         <navigator target="miniProgram" open-type="navigate" app-id="{{ appId }}" extra-data="{{ extraData }}" hover-class="none" version="release">
           <view>
