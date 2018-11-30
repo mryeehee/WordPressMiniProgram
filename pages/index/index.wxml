@@ -30,12 +30,14 @@
   <swiper class="index-swiper" indicator-dots="" interval="10000" autoplay="true" indicator-color="rgba(255, 255, 255, .2)" indicator-active-color="rgba(255, 255, 255, .7)" previous-margin="30rpx" next-margin="50rpx" circular="true" bindchange="handleChange">
     <block wx:key="id" wx:for="{{postsShowSwiperList}}">
       <swiper-item id="{{item.id}}" index="{{index}}" data-redicttype="{{item.type}}" data-appid="{{item.appid}}" data-url="{{item.url}}" bindtap="redictAppDetail" style="">
-        
-        <view wx:if="{{item.post_thumbnail_image}}"><!-- 默认调取文章内容的特色图片 -->
-        <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
+
+        <view wx:if="{{item.post_thumbnail_image}}">
+          <!-- 默认调取文章内容的特色图片 -->
+          <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.post_thumbnail_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
         </view>
-        <view wx:else><!-- 如果没有特色图片时，这里调取文章内容里面的第一张图像 -->
-        <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.content_first_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
+        <view wx:else>
+          <!-- 如果没有特色图片时，这里调取文章内容里面的第一张图像 -->
+          <image class="itemImg {{currentIndex == index ? 'active': ''}}" mode="aspectFill" src="{{item.content_first_image}}" style="width:96%;margin:0 24rpx;border-radius:8rpx" />
         </view>
 
       </swiper-item>
@@ -95,18 +97,20 @@
           </view>
         </navigator>
       </view>
-      <!-- 绑定同<vpush-view>一公众号关联的其他小程序 end -->
+      <!-- 绑定同一公众号关联的其他小程序 end -->
+
+      <!-- 绑定吐槽社区功能 -->
       <view class="top-item" style='width:10%; position: relative; float:left; text-align:center'>
-        <view>
-          <image src="../../images/kefu.svg"></image>
-        </view>
-        <view>
-          <vpush-view>
-            <text>咨询</text>
-          </vpush-view>
-        </view>
-        <button class="share-button" open-type="contact" bindtap="notifyAdmin">
-        </button>
+        <navigator target="miniProgram" open-type="navigate" app-id="{{ appId }}" extra-data="{{ extraData }}" hover-class="none" version="release">
+          <view>
+            <image src="../../images/kefu.svg"></image>
+          </view>
+          <view>
+            <vpush-view>
+              <text>吐槽</text>
+            </vpush-view>
+          </view>
+        </navigator>
       </view>
     </view>
     <!-- 图标导航 end -->
@@ -124,12 +128,12 @@
     </view>
 
     <view class="cms-cont mstTwoPicsPerRow">
-      <block wx:key="id" wx:for="{{postsList1}}">
+      <block wx:key="id" wx:for="{{recommendPostsList}}">
         <view class="mstTwoPicsPerRow-item" index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
           <image class="mstTwoPicsPerRow-img" mode="aspectFill" src="{{item.post_thumbnail_image}}"></image>
           <!--view class="bg-shadow"></view-->
           <view class="img-text">
-            <!--text class="img-text-large">{{item.title.rendered}}</text-->
+            <!--text class="img-text-large">{{item.title.rendered}} </text-->
             <text class="img-text-small">{{item.pageviews}} 位网友推荐</text>
           </view>
         </view>
@@ -147,7 +151,7 @@
       </view>
     </view>
     <scroll-view scroll-x="true" scroll-with-animation="true" style="display:flex;white-space:nowrap;padding:4rpx 0 24rpx;">
-      <view class="cms-cont" wx:key="id" wx:for="{{postsList3}}" style='width:93%'>
+      <view class="cms-cont" wx:key="id" wx:for="{{selectionPostsList}}" style='width:93%'>
         <view index="{{index}}" id="{{item.id}}" bindtap="redictDetail">
             <image class="mstOnePic-img" mode="aspectFill" src="{{item.post_thumbnail_image}}"></image>
           <text class="new_icon">广告</text>

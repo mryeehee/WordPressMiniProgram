@@ -27,9 +27,8 @@ var app = getApp();
 Page({
   data: {
     postsList: [],
-    postsList1: [],
-    //postsList2: [],
-    postsList3: [],
+    recommendPostsList: [],
+    selectionPostsList: [],
     postsShowSwiperList: [],
     isLastPage: false,
     page: 1,
@@ -46,8 +45,17 @@ Page({
     currentIndex: 0,
     topNav: [],
     userInfo: app.globalData.userInfo,
-    isLoginPopup: false
-
+    isLoginPopup: false,
+    appId: "wx8abaf00ee8c3202e",
+    extraData: {
+      // 把1221数字换成你的产品ID，否则会跳到别的产品
+      id: "45980",
+      // 自定义参数，具体参考文档
+      customData: {
+        clientInfo: `iPhone OS 10.3.1 / 3.2.0.43 / 0`,
+        imei: '7280BECE2FC29544172A2B858E9E90D0'
+      }
+    }
 
   },
   formSubmit: function(e) {
@@ -173,7 +181,7 @@ Page({
   },
   fetchTopFivePosts: function() {
     var self = this;
-    //取置顶的文章
+    //获取幻灯片的文章
     var getPostsRequest = wxRequest.getRequest(Api.getSwiperPosts());
     getPostsRequest.then(response => {
         if (response.data.status == '200' && response.data.posts.length > 0) {
@@ -323,7 +331,7 @@ Page({
     getPostsRequest.then(response => {
       if (response.statusCode === 200) {
         self.setData({
-          postsList1: self.data.postsList1.concat(response.data.map(function(item) {
+          recommendPostsList: self.data.recommendPostsList.concat(response.data.map(function(item) {
 
             var strdate = item.date
             if (item.category_name != null) {
@@ -350,7 +358,7 @@ Page({
     getPostsRequest.then(response => {
       if (response.statusCode === 200) {
         self.setData({
-          postsList3: self.data.postsList3.concat(response.data.map(function(item) {
+          selectionPostsList: self.data.selectionPostsList.concat(response.data.map(function(item) {
 
             var strdate = item.date
             if (item.category_name != null) {
@@ -369,44 +377,6 @@ Page({
         });
       }
     })
-  },
-
-
-  //获取浏览排行
-  fetchPostsHostData: function(tab) {
-    var self = this;
-    self.setData({
-      postsList2: []
-    });
-    wx.showLoading({
-      title: '正在加载',
-      mask: true
-    });
-    var getTopHotPostsRequest = wxRequest.getRequest(Api.getTopHotPosts(tab));
-    getTopHotPostsRequest.then(response => {
-        if (response.statusCode === 200) {
-          self.setData({
-            postsList2: self.data.postsList2.concat(response.data.map(function(item) {
-              var strdate = item.post_date
-              if (item.post_thumbnail_image == null || item.post_thumbnail_image == '') {
-                item.post_thumbnail_image = '../../images/logo700.png';
-              }
-              item.post_date = util.cutstr(strdate, 10, 1);
-              return item;
-            })),
-          });
-        } else if (response.statusCode === 404) {
-          console.log('加载数据失败,可能缺少相应的数据');
-        }
-      })
-      .catch(function() {
-        wx.hideLoading();
-      })
-      .finally(function() {
-        setTimeout(function() {
-          wx.hideLoading();
-        }, 1500);
-      });
   },
 
   //加载分页
@@ -519,7 +489,7 @@ Page({
     });
   },
 
-  userAuthorization: function () {
+  userAuthorization: function() {
     var self = this;
     // 判断是否是第一次授权，非第一次授权且授权失败则进行提醒
     wx.getSetting({
@@ -544,7 +514,7 @@ Page({
               cancelColor: '#296fd0',
               confirmColor: '#296fd0',
               confirmText: '设置权限',
-              success: function (res) {
+              success: function(res) {
                 if (res.confirm) {
                   console.log('用户点击确定')
                   wx.openSetting({
@@ -566,7 +536,7 @@ Page({
       }
     });
   },
-  agreeGetUser: function (e) {
+  agreeGetUser: function(e) {
     var userInfo = e.detail.userInfo;
     var self = this;
     if (userInfo) {
@@ -575,7 +545,7 @@ Page({
         userInfo: userInfo
       })
     }
-    setTimeout(function () {
+    setTimeout(function() {
       self.setData({
         isLoginPopup: false
       })
@@ -592,14 +562,14 @@ Page({
       isLoginPopup: true
     });
   },
-  confirm: function () {
+  confirm: function() {
     this.setData({
       'dialog.hidden': true,
       'dialog.title': '',
       'dialog.content': ''
     })
   },
-  getUsreInfo: function () {
+  getUsreInfo: function() {
     var self = this;
     var wxLogin = wxApi.wxLogin();
     var jscode = '';
@@ -608,43 +578,43 @@ Page({
       var wxGetUserInfo = wxApi.wxGetUserInfo()
       return wxGetUserInfo()
     }).
-      //获取用户信息
-      then(response => {
-        console.log(response.userInfo);
-        console.log("成功获取用户信息(公开信息)");
-        app.globalData.userInfo = response.userInfo;
-        app.globalData.isGetUserInfo = true;
-        self.setData({
-          userInfo: response.userInfo
-        });
+    //获取用户信息
+    then(response => {
+      console.log(response.userInfo);
+      console.log("成功获取用户信息(公开信息)");
+      app.globalData.userInfo = response.userInfo;
+      app.globalData.isGetUserInfo = true;
+      self.setData({
+        userInfo: response.userInfo
+      });
 
-        var url = Api.getOpenidUrl();
-        var data = {
-          js_code: jscode,
-          encryptedData: response.encryptedData,
-          iv: response.iv,
-          avatarUrl: response.userInfo.avatarUrl
+      var url = Api.getOpenidUrl();
+      var data = {
+        js_code: jscode,
+        encryptedData: response.encryptedData,
+        iv: response.iv,
+        avatarUrl: response.userInfo.avatarUrl
+      }
+      var postOpenidRequest = wxRequest.postRequest(url, data);
+      //获取openid
+      postOpenidRequest.then(response => {
+        if (response.data.status == '200') {
+          //console.log(response.data.openid)
+          console.log("openid 获取成功");
+          app.globalData.openid = response.data.openid;
+          app.globalData.isGetOpenid = true;
+        } else {
+          console.log(response.data.message);
         }
-        var postOpenidRequest = wxRequest.postRequest(url, data);
-        //获取openid
-        postOpenidRequest.then(response => {
-          if (response.data.status == '200') {
-            //console.log(response.data.openid)
-            console.log("openid 获取成功");
-            app.globalData.openid = response.data.openid;
-            app.globalData.isGetOpenid = true;
-          } else {
-            console.log(response.data.message);
-          }
-        })
-      }).catch(function (error) {
-        console.log('error: ' + error.errMsg);
-        self.userAuthorization();
       })
+    }).catch(function(error) {
+      console.log('error: ' + error.errMsg);
+      self.userAuthorization();
+    })
   },
 
   //设置首页咨询按钮点击事件：当用户点击咨询按钮时，自动推送一条消息给管理员
-  notifyAdmin: function () {
+  notifyAdmin: function() {
     console.log(' 用户咨询，开始通知管理员。');
     wx.request({
       url: 'https://cloud.safedog.cc/vpush/functions/PUSH_API',

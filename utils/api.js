@@ -287,9 +287,12 @@ module.exports = {
     return url;
   },
   //获取随机文章
-  getRandomPosts() {
+  getPostsByRandom() {
+    //var url = 'https://' + domain + "/wp-json/watch-life-net/v1/post/random";
+    //return url;
+
     var url = HOST_URI_WATCH_LIFE_JSON;
-    url += "post/random";
+    url += 'post/random';
     return url;
   }
 };
