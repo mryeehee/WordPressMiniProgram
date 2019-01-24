@@ -1,0 +1,21 @@
+<!--vpush-pro-sdk/components/view.wxml-->
+<!-- 
+
+// 用法
+<vpush-view
+  onClickHandler="page.js页面的点击回调函数，可选"
+  customClass="page.wxss的自定义样式类名，可选"
+/>
+
+-->
+
+<form
+  report-submit
+  bindsubmit='add'>
+  <button
+    form-type='submit'
+    class="custom-class"
+    hover-class='button-hover'>
+    <slot />
+  </button>
+</form>

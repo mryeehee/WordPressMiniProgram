@@ -39,7 +39,7 @@ module.exports = {
 
   // 获取指定分类ID：20(首页：网友推荐)的文章数据
   getPostsByCategory: function (obj) {
-    var url = HOST_URI + 'posts?per_page=7&orderby=date&order=desc&page=1&categories=23';
+    var url = HOST_URI + 'posts?per_page=4&orderby=date&order=desc&page=1&categories=23';
     return url;
 
   },

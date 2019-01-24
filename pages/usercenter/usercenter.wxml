@@ -15,10 +15,20 @@
 <import src="../../templates/login-popup.wxml" />
 
 <view class="readlog-container">
-  <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
+  <block wx:if="{{userInfo == null || userInfo == ''}}">
+    <button class="login-btn login-button" open-type="getUserInfo" bindgetuserinfo="agreeGetUser">
+      <view class="userinfo">
+        <image class="userinfo-avatar" src="../../images/gravatar.png" background-size="cover"></image>
+        <text class="userinfo-nickname">请点击登陆</text>
+      </view>
+    </button>
+  </block>
+  <block wx:else>
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </block>
 
   <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
 

@@ -14,5 +14,6 @@ button::after {
   border-radius: 0;
 }
 .button-hover{
-  background: transparent;
+  /* background: transparent; */
+  opacity: 0.6;
 }

@@ -138,3 +138,10 @@
   /* font-weight: bold; */
   color: #495056;
 }
+
+.login-button {
+  background: #2f89fc;
+  width: 100%;
+  border-radius: 0;
+  border: #2f89fc;
+}

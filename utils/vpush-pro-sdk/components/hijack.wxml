@@ -1,0 +1,9 @@
+<form
+  report-submit
+  bindsubmit='add'>
+  <button
+    form-type='submit'
+    class="hijack-btn"
+    style="width:{{width}};height:{{height}};top:{{top}};left:{{left}};z-index:{{SHOW?99999:-999}};background-color:{{debug?'rgba(244, 67, 54, 0.5)':'transparent'}};{{style}}">
+  </button>
+</form>

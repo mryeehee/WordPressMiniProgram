@@ -99,7 +99,7 @@
 .common-list .list-item.has-img image.cover-100 {
   border-radius:3px;
   width:100%;
-  height:175px;
+  height:30vh;
 }
 
 .common-list .list-item.has-img .content-title {
@@ -110,7 +110,7 @@
 
 .common-list .list-item.has-img .content-title-100 {
 width:100%;
-margin-top:185px;
+/*margin-top:185px;*/
 margin-bottom:5px;
 }
 

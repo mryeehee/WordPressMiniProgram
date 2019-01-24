@@ -1,0 +1,26 @@
+<view class="checkin-container {{SHOW_CLASS}}">
+  <view>
+    <!-- 头像 -->
+    <open-data type="userAvatarUrl" class="avatar"></open-data>
+    <!-- 昵称 -->
+    <open-data type="userNickName" class="nickName"></open-data>
+
+    <!-- 标题&文字 -->
+    <view class='content'>
+      <text class='title'>{{title}}</text>
+      <text class='desc'>{{desc}}</text>
+    </view>
+
+    <!-- 签到按钮 -->
+    <form
+      report-submit
+      bindsubmit='checkin'>
+      <button
+        form-type='submit'
+        class="checkin-btn"
+        hover-class='button-hover'>
+        <text>签到</text>
+      </button>
+    </form>
+  </view>
+</view>

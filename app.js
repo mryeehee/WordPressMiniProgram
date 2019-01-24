@@ -9,27 +9,27 @@
  */
 
 const ald = require('./utils/ald-stat.js');
-var vPush = require('./utils/vpush/_vpush.js');
+var vPush = require('./utils/vpush-pro-sdk/vpush.pro.js');
 
 App({
-    vPush,
-  onLaunch: function () {
+  vPush: new vPush('wxd9a0fcfcb2877cc0'),
+  onLaunch: function() {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
   },
-  
-  getUserInfo:function(cb){
+
+  getUserInfo: function(cb) {
     var that = this
-    if(this.globalData.userInfo){
+    if (this.globalData.userInfo) {
       typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
+    } else {
       //调用登录接口
       wx.login({
-        success: function () {
+        success: function() {
           wx.getUserInfo({
-            success: function (res) {
+            success: function(res) {
               that.globalData.userInfo = res.userInfo
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
@@ -38,11 +38,11 @@ App({
       })
     }
   },
-  globalData:{
-    userInfo:null,
-    openid:'',
-    isGetUserInfo:false,
-    isGetOpenid:false
+  globalData: {
+    userInfo: null,
+    openid: '',
+    isGetUserInfo: false,
+    isGetOpenid: false
 
   }
 })

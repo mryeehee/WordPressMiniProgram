@@ -63,7 +63,7 @@
       </view>
     </view>
 
-    <!-- 上一篇 -->
+    <!--
     <view wx:if="{{display}}" class="pagination">
       <view wx:if="{{detail.previous_post_id}}" class="nav-previous">
         <navigator url="../detail/detail?id={{detail.previous_post_id}}" open-type="redirect" hover-class="relatedNavigator" style="position:fixed;right:26rpx;bottom:340rpx;background:rgba(255,255,255,.95);width:50rpx;height:50rpx;padding:15rpx;box-shadow:0rpx 2rpx 6rpx rgba(0,0,0,.2);border-radius:50%;z-index:999">
@@ -71,7 +71,7 @@
         </navigator>
       </view>
     </view>
-    <!-- 下一篇  -->
+
     <view wx:if="{{display}}" class="pagination">
       <view wx:if="{{detail.next_post_id}}" class="nav-next">
         <navigator url="../detail/detail?id={{detail.next_post_id}}" open-type="redirect" hover-class="relatedNavigator" style="position:fixed;right:26rpx;bottom:230rpx;background:rgba(255,255,255,.95);width:50rpx;height:50rpx;padding:15rpx;box-shadow:0rpx 2rpx 6rpx rgba(0,0,0,.2);border-radius:50%;z-index:999">
@@ -79,18 +79,20 @@
         </navigator>
       </view>
     </view>
-    <!--<view class="relatedPost" style="display:{{display}}">
-            <view class="relatedTitle">
-                相关文章
-            </view>
-            <view class="entry-gap-like"></view>
-            <view class="relatedText">
-                <block wx:key="id" wx:for="{{postList}}">
-                    <navigator url="../detail/detail?id={{item.id}}" open-type="redirect" hover-class="relatedNavigator"><image src="../../images/circle-empty.png" style='width:16rpx;height:16rpx;margin:0 14rpx 1rpx 0;'></image>{{item.title.rendered}}</navigator>
+    <view class="relatedPost" style="display:{{display}}">
+      <view class="relatedTitle">
+        相关文章
+      </view>
+      <view class="entry-gap-like"></view>
+      <view class="relatedText">
+        <block wx:key="id" wx:for="{{postList}}">
+          <navigator url="../detail/detail?id={{item.id}}" open-type="redirect" hover-class="relatedNavigator">
+            <image src="../../images/circle-empty.png" style='width:16rpx;height:16rpx;margin:0 14rpx 1rpx 0;'></image>{{item.title.rendered}}</navigator>
 
-                </block>
-            </view>
-        </view>-->
+        </block>
+      </view>
+    </view>
+  -->
 
     <view class="likePost" style="display:{{displayLikenone}}">
       <view catchtap="clickLike" id="likebottom" class="likebtt">
@@ -212,7 +214,6 @@
                       <button class="share-button share-button touch-active" open-type="share">
                       </button>
                     </view>
-
                   </view>
                   <view style="width:40%;text-align:center;line-height:50rpx;">
                     <view>
