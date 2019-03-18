@@ -139,7 +139,8 @@ swiper .swiper-desc {
   flex-direction: row;
   /* margin-top: 8px; */
   padding: 24rpx;
-  background: #2f89fc;
+  background-color: #2f89fc;
+  background-image: linear-gradient(to bottom, #2f89fc, #2fd3fc);
   border-radius:0 0 50rpx 50rpx;
 }
 

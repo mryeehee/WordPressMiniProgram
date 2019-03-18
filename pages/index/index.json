@@ -1,6 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "vpush-view": "/utils/vpush-pro-sdk/components/view"
+    "vpush-view": "../../utils/vpush-pro-sdk/components/view",
+    "van-dialog": "../../vendor/dist/dialog/index"
   }
 }
