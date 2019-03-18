@@ -1,10 +1,10 @@
 {
   "navigationBarTitleText": "我的个人中心",
   "usingComponents": {
-    "zan-cell": "../../vendor/dist/cell/index",
-    "zan-icon": "../../vendor/dist/icon/index",
-    "zan-badge": "../../vendor/dist/badge/index",
-    "zan-panel": "../../vendor/dist/panel/index",
-    "zan-cell-group": "../../vendor/dist/cell-group/index"
+    "van-cell": "../../vendor/dist/cell/index",
+    "van-icon": "../../vendor/dist/icon/index",
+    "van-badge": "../../vendor/dist/badge/index",
+    "van-panel": "../../vendor/dist/panel/index",
+    "van-cell-group": "../../vendor/dist/cell-group/index"
   }
 }

@@ -32,22 +32,22 @@
 
   <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
 
-  <zan-panel title="" style="width:100vw;border-top:20rpx solid #eee;">
-    <zan-cell-group>
-      <zan-cell title="热门排行" is-link url="../hot/hot"></zan-cell>
-      <zan-cell title="最近浏览" is-link url="../readlog/readlog"></zan-cell>
-      <zan-cell title="关于作者" is-link url="../about/about"></zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+  <van-panel title="" style="width:100vw;border-top:20rpx solid #eee;">
+    <van-cell-group>
+      <van-cell title="热门排行" icon="diamond" is-link url="../hot/hot"></van-cell>
+      <van-cell title="最近浏览" is-link url="../readlog/readlog"></van-cell>
+      <van-cell title="关于作者" is-link url="../about/about"></van-cell>
+    </van-cell-group>
+  </van-panel>
 
-  <zan-panel title="" style="width:100vw;border-top:20rpx solid #eee;">
-    <zan-cell-group>
-      <zan-cell title="意见反馈" is-link></zan-cell>
+  <van-panel title="" style="width:100vw;border-top:20rpx solid #eee;">
+    <van-cell-group>
+      <van-cell icon="label-o" title="意见反馈" is-link></van-cell>
       <button class="feedback-button" open-type="feedback"></button>
-      <zan-cell title="在线咨询" is-link></zan-cell>
+      <van-cell title="在线咨询" is-link></van-cell>
       <button class="contact-button" open-type="contact" bindtap="notifyAdminForUsercenter"></button>
-    </zan-cell-group>
-  </zan-panel>
+    </van-cell-group>
+  </van-panel>
 
   <view class="container" style='width:90%;text-overflow:ellipsis;white-space:nowrap;'>
     <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>

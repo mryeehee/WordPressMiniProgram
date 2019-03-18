@@ -58,7 +58,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #2f89fc;
+  background-color: #2fd3fc;
+  background-image: linear-gradient(to bottom, #2f89fc, #2fd3fc);
   height: 280rpx;
   width: 100%;
   /* background-image: url(https://www.yeehee.cn/wp-content/uploads/2018/08/2018081117514876.png);
