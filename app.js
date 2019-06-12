@@ -8,11 +8,13 @@
  * Copyright (c) 2017 https://www.yeehee.cn All rights reserved.
  */
 
-const ald = require('./utils/ald-stat.js');
-var vPush = require('./utils/vpush-pro-sdk/vpush.pro.js');
+/*
+* const ald = require('./utils/ald-stat.js');
+* var vPush = require('./utils/vpush-pro-sdk/vpush.pro.js');
+*/
 
 App({
-  vPush: new vPush('wxd9a0fcfcb2877cc0'),
+  //vPush: new vPush('wxd9a0fcfcb2877cc0'),
   onLaunch: function() {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []

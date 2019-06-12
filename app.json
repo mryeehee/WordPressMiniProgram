@@ -24,7 +24,7 @@
   "tabBar": {
     "color": "#9BABBA",
     "selectedColor": "#2f89fc",
-    "borderStyle": "gray",
+    "borderStyle": "white",
     "backgroundColor": "#fefefe",
     "list": [
       {
@@ -38,7 +38,7 @@
         "iconPath": "images/tar-topic.png",
         "selectedIconPath": "images/tar-topic-on-2.png",
         "text": "专题"
-      }, 
+      },
       {
         "pagePath": "pages/usercenter/usercenter",
         "iconPath": "images/tar-person.png",
@@ -56,5 +56,6 @@
   "navigateToMiniProgramAppIdList": [
     "wxb6bde4eeb2d43820",
     "wx8abaf00ee8c3202e"
-  ]
+  ],
+  "sitemapLocation": "sitemap.json"
 }

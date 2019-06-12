@@ -17,9 +17,9 @@ var wxApi = require('../../utils/wxApi.js')
 var wxRequest = require('../../utils/wxRequest.js')
 import config from '../../utils/config.js'
 var pageCount = config.getPageCount;
-var {
+/*var {
   vPush
-} = getApp();
+} = getApp();*/
 var app = getApp();
 //const TxvContext = requirePlugin("tencentvideo");
 //let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
