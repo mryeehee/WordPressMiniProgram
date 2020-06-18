@@ -1,6 +1,6 @@
 ### WordPress版微信小程序 2.0 重构版
 
-作者：叶赫先生 Wechat ID: ryan_yuu
+作者：叶赫先生 Wechat ID: mryeehee206
 
 
 ![wechatminiprogram](https://www.yeehee.cn/wp-content/uploads/2019/03/2019031813161410.jpg)
@@ -42,13 +42,13 @@ https://github.com/mryeehee/PluginForWordPress
 
 #### 开源协议：MIT
 
-#### 技术支持微信：ryan_yuu
+#### 技术支持微信：mryeehee206
 
 
 
 #### 讨论微信群：
 
-由于微信群超过100人，无法再扫描二维码加入。如果你想加入，请先加我的微信：ryan_yuu ，我拉你入群。
+由于微信群超过100人，无法再扫描二维码加入。如果你想加入，请先加我的微信：mryeehee206 ，我拉你入群。
 
 
 
