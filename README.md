@@ -1,6 +1,6 @@
 ### WordPress版微信小程序 2.0 重构版
 
-作者：叶赫先生 Wechat ID: mryeehee206
+作者：叶赫先生 Wechat ID: YXY869006
 
 
 ![wechatminiprogram](https://www.yeehee.cn/wp-content/uploads/2019/03/2019031813161410.jpg)
